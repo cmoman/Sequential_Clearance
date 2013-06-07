@@ -332,3 +332,5 @@ main()
 ## start the Qt main loop execution, exiting from this script
 ## with the same return code of Qt application
 #sys.exit(app.exec_())
+
+#mino

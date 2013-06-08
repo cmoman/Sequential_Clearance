@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="images">
+    <file alias="splash">images/schematic.png</file>
+    <file alias="splash">images/blank.png</file>
+    <file alias="splash">images/schematic_from_model_view.png</file>
+  </qresource>
+</RCC>

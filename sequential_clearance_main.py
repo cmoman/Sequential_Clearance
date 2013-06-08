@@ -20,7 +20,7 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # import the MainWindow widget from the converted .ui files
-from ui_qtdesigner import Ui_MplMainWindow
+from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 
@@ -35,8 +35,6 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.inc_curve=self.curveComboBox_1.addItems(sorted(bling))
         self.fdr1_curve=self.curveComboBox_2.addItems(sorted(bling))
         self.fdr2_curve=self.curveComboBox_3.addItems(sorted(bling))
-        
-        time.sleep(2)
         
         self.initUI()
         
@@ -112,21 +110,36 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         """Updates the graph"""
 
         # clear the Axes
-        self.mpl.canvas.ax.clear()
+        self.mpl_1.canvas.ax.clear()
         self.mpl_2.canvas.ax.clear()
-        
+        self.mpl_3.canvas.ax.clear()
+        self.mpl_4.canvas.ax.clear()
+
         self.mpl_5.canvas.ax.clear()
         self.mpl_6.canvas.ax.clear()
         self.mpl_7.canvas.ax.clear()
         self.mpl_8.canvas.ax.clear()
         
+        self.mpl_9.canvas.ax.clear()
+        self.mpl_10.canvas.ax.clear()
+        self.mpl_11.canvas.ax.clear()
+        self.mpl_12.canvas.ax.clear()        
+        
         #Clear second axis
-        self.mpl.canvas.ax2.clear()
+        self.mpl_1.canvas.ax2.clear()
         self.mpl_2.canvas.ax2.clear()
+        self.mpl_3.canvas.ax2.clear()
+        self.mpl_4.canvas.ax2.clear()        
+        
         self.mpl_5.canvas.ax2.clear()
         self.mpl_6.canvas.ax2.clear()
         self.mpl_7.canvas.ax2.clear()
         self.mpl_8.canvas.ax2.clear()
+        
+        #self.mpl_9.canvas.ax2.clear()
+        #self.mpl_10.canvas.ax2.clear()
+        self.mpl_11.canvas.ax2.clear()
+        self.mpl_12.canvas.ax2.clear()          
         
         self.mult0   =self.mpldoubleSpinBox2.value()
         self.mult1   =self.mpldoubleSpinBox3.value()
@@ -155,7 +168,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         #self.ratio=self.mpldial.value()/10.0
         
         #m_store,incomer_current,incomer_current_fdr1_open,incomer_current_fdr2_open,bling = seq.main_seq(self.ratio)
-        m_store,margin_store,margin_store2,margin_store3,margin_store4,margin_store5,margin_store6,bling,j1,j2,j3,k1,k2,k3,l1,l2,l3,m1,m2,m3,n1,n2,n3,o1,o2,o3 = seq.main_seq(self.ratio,self.mult0,self.mult1,self.mult2,\
+        m_store,margin_store,margin_store2,margin_store3,margin_store4,margin_store5,margin_store6,\
+            bling,j1,j2,j3,k1,k2,k3,l1,l2,l3,m1,m2,m3,n1,n2,n3,o1,o2,o3 = seq.main_seq(self.ratio,self.mult0,self.mult1,self.mult2,\
                                                   self.pickup0,self.pickup1,self.pickup2,\
                                                   self.incct,self.feederct1,self.feederct2,\
                                                   self.tximp,\
@@ -165,28 +179,18 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
                                                   self.inc_curve,self.fdr1_curve,self.fdr2_curve)
         
         #plot the graph on tab 2
-        self.mpl.canvas.ax.set_title('Margin between incomer and feeders to trip.')
-        self.mpl.canvas.ax.set_ylabel('Margin in seconds')
-        self.mpl.canvas.ax.set_xlabel('m')           
-        self.mpl.canvas.ax.grid(True) 
-        self.mpl.canvas.ax2.axhline(0.4,color='r')
-        self.mpl.canvas.ax.set_ylabel('percentage')
-        self.mpl.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Incomer percentage')
-        self.mpl.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
-        self.mpl.canvas.ax.set_ylim(0.0,1.1)
-        
-        #self.mpl.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
-        self.mpl.canvas.ax2.set_ylabel('Time')
-        self.mpl.canvas.ax2.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='g', marker='x', label='Incomer time for 2nd trip')
-        self.mpl.canvas.ax2.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='r', marker='x', label='Feeder time for 2nd trip')
-        self.mpl.canvas.ax2.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='b', marker='x', label='Second trip margin')
-        self.mpl.canvas.ax2.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='black', marker='x', label='First trip Margin')
-        #self.mpl.canvas.ax2.set_ylim(0.0,5.0)
-        
-        self.mpl.canvas.ax.legend(loc='best')
-        self.mpl.canvas.ax2.legend(loc='best')
-        
-        #self.mpl.canvas.draw()
+        self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')
+        self.mpl_1.canvas.ax.set_ylabel('Margin in seconds')
+        self.mpl_1.canvas.ax.set_xlabel('m')           
+        self.mpl_1.canvas.ax.grid(True) 
+        self.mpl_1.canvas.ax2.axhline(0.4,color='r')
+        self.mpl_1.canvas.ax.set_ylabel('percentage')
+        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Incomer percentage')
+        self.mpl_1.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
+        self.mpl_1.canvas.ax.set_ylim(0.0,1.1)
+        self.mpl_1.canvas.ax.legend(loc='best')
+
+        #self.mpl_1.canvas.draw()
         
         #plot the tab 2 graph
         self.mpl_2.canvas.ax.set_title('Margin between incomer and feeders to trip.')
@@ -204,6 +208,25 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_2.canvas.ax2.legend(loc=2)        
         #self.mpl_2.canvas.draw()
         
+        self.mpl_3.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
+        self.mpl_3.canvas.ax.set_ylabel('Time')
+        self.mpl_3.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='g', marker='x', label='Incomer time for 2nd trip')
+        self.mpl_3.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='r', marker='x', label='Feeder time for 2nd trip')
+        self.mpl_3.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='b', marker='x', label='Second trip margin')
+        self.mpl_3.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='black', marker='x', label='First trip Margin')
+        self.mpl_3.canvas.ax.set_ylim(0.0,5.0)
+        self.mpl_3.canvas.ax.legend(loc='best')
+        
+        self.mpl_4.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
+        self.mpl_4.canvas.ax.set_ylabel('Time')
+        self.mpl_4.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='g', marker='x', label='Incomer time for 2nd trip')
+        self.mpl_4.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='r', marker='x', label='Feeder time for 2nd trip')
+        self.mpl_4.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='b', marker='x', label='Second trip margin')
+        self.mpl_4.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='black', marker='x', label='First trip Margin')
+        self.mpl_4.canvas.ax.set_ylim(0.0,5.0)
+        self.mpl_4.canvas.ax.legend(loc='best')        
+        
+        
         self.mpl_5.canvas.ax.set_title('Incomer times and current')
         self.mpl_5.canvas.ax.set_ylabel('Seconds')
         self.mpl_5.canvas.ax2.set_ylabel('Amps')
@@ -211,15 +234,16 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_5.canvas.ax.grid(True) 
         self.mpl_5.canvas.ax.plot(m_store,j1,label='Fdr1//Fdr2 t',color='red')
         self.mpl_5.canvas.ax.plot(m_store,j2,label='Fdr1 open t',color='green')
-        self.mpl_5.canvas.ax.plot(m_store,j3,label='Fdr2 open t',color='blue')
+        #self.mpl_5.canvas.ax.plot(m_store,j3,label='Fdr2 open t',color='blue')
 
         self.mpl_5.canvas.ax2.plot(m_store,m1,label='Fdr1//Fdr2 I',color='red',linestyle='-.')
         self.mpl_5.canvas.ax2.plot(m_store,m2,label='Fdr1 open I' ,color='green',linestyle='-.')
-        self.mpl_5.canvas.ax2.plot(m_store,m3,label='Fdr2 open I',color='blue',linestyle='-.')
+        #self.mpl_5.canvas.ax2.plot(m_store,m3,label='Fdr2 open I',color='blue',linestyle='-.')
         
         self.mpl_5.canvas.ax.legend(loc=2)
         self.mpl_5.canvas.ax2.legend(loc=1)
-        #self.mpl_5.canvas.draw()
+        
+
         
         self.mpl_6.canvas.ax.set_title('Feeder One times and current')
         self.mpl_6.canvas.ax.set_ylabel('Seconds')
@@ -262,18 +286,55 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_8.canvas.ax2.plot(m_store,o2,label='Fdr1 open I',color='blue',linestyle='-.')
 
         self.mpl_8.canvas.ax.legend(loc=2)
-        self.mpl_8.canvas.ax2.legend(loc=1)        
+        self.mpl_8.canvas.ax2.legend(loc=1)
         
-      
+        self.mpl_9.canvas.ax.set_title('Feeder One times and current')
+        self.mpl_9.canvas.ax.set_ylabel('Seconds')
+        #self.mpl_9.canvas.ax2.set_ylabel('Amps')
+        self.mpl_9.canvas.ax.set_ylim(0.0,2.0)
+        self.mpl_9.canvas.ax.grid(True) 
+        self.mpl_9.canvas.ax.plot(m_store,k1,label='Fdr1//Fdr2 t',color='red')
+        self.mpl_9.canvas.ax.plot(m_store,k3,label='Fdr2 open t',color='green')    
         
-        self.mpl.canvas.draw()  
+        self.mpl_10.canvas.ax.set_title('Feeder One times and current')
+        self.mpl_10.canvas.ax.set_ylabel('Seconds')
+        #self.mpl_10.canvas.ax2.set_ylabel('Amps')
+        self.mpl_10.canvas.ax.set_ylim(0.0,2.0)
+        self.mpl_10.canvas.ax.grid(True) 
+        self.mpl_10.canvas.ax.plot(m_store,k1,label='Fdr1//Fdr2 t',color='red')
+        self.mpl_10.canvas.ax.plot(m_store,k3,label='Fdr2 open t',color='green')    
+        
+        self.mpl_11.canvas.ax.set_title('Incomer times and current')
+        self.mpl_11.canvas.ax.set_ylabel('Seconds')
+        self.mpl_11.canvas.ax2.set_ylabel('Amps')
+        self.mpl_11.canvas.ax.set_ylim(0.0,4.0)
+        self.mpl_11.canvas.ax.grid(True) 
+        self.mpl_11.canvas.ax.plot(m_store,j1,label='Fdr1//Fdr2 t',color='red')
+        #self.mpl_11.canvas.ax.plot(m_store,j2,label='Fdr1 open t',color='green')
+        self.mpl_11.canvas.ax.plot(m_store,j3,label='Fdr2 open t',color='blue')
+
+        self.mpl_11.canvas.ax2.plot(m_store,m1,label='Fdr1//Fdr2 I',color='red',linestyle='-.')
+        #self.mpl_11.canvas.ax2.plot(m_store,m2,label='Fdr1 open I' ,color='green',linestyle='-.')
+        self.mpl_11.canvas.ax2.plot(m_store,m3,label='Fdr2 open I',color='blue',linestyle='-.')
+        
+        self.mpl_11.canvas.ax.legend(loc=2)
+        self.mpl_11.canvas.ax2.legend(loc=1)
+        #self.mpl_8.canvas.draw()        
+        
+        self.mpl_1.canvas.draw()  
         self.mpl_2.canvas.draw()  
-        #self.mpl_3.canvas.draw()  
-        #self.mpl_4.canvas.draw()  
+        self.mpl_3.canvas.draw()  
+        self.mpl_4.canvas.draw()
+        
         self.mpl_5.canvas.draw()
         self.mpl_6.canvas.draw()  
         self.mpl_7.canvas.draw()
         self.mpl_8.canvas.draw()
+        
+        self.mpl_9.canvas.draw()
+        self.mpl_10.canvas.draw()  
+        self.mpl_11.canvas.draw()
+        self.mpl_12.canvas.draw()        
         
 def fakeIt():
     pass

@@ -20,8 +20,7 @@ class MplCanvas2(FigureCanvas):
         self.fig2 = Figure()
         #self.fig2 = Figure()
         super(MplCanvas2, self).__init__(self.fig2)
-        self.ax = self.fig2.add_subplot(121)
-        self.ax2 = self.fig2.add_subplot(122,polar=True)
+        self.ax = self.fig2.add_subplot(111,polar=True)
         
         #I added this to allow the addition of a second axis
         #Might need to create to widgets- One with dual axis and one without.

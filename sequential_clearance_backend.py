@@ -7,6 +7,68 @@ import numpy as np
 import scipy as scp
 import cmath as cm
 
+########################################################################
+
+class CB_Relay(object):
+    """This class attempts to define all the parameters surrounding an inverse time overcurrent relay"""
+
+    #----------------------------------------------------------------------
+    def __init__(self,TimeMultiplier=0.25,ctratio=400.0,pickup=1.0,curvetype='NI',percent_travel=0.0,\
+                 cb_open_time=0.06, highsetpickup=10.0,highset=False):
+        """Constructor"""
+        self.TimeMultiplier=TimeMultiplier
+        self.pickup=pickup
+        self.ctratio=ctratio
+        self.curvetype=curvetype
+        self.percent_travel=percent_travel
+        self.tripped=False
+        self.pulse_counter=0 #how many pulses of fault current
+        self.cb_open_time=cb_open_time  #time in milliseconds
+        self.highset=highset
+        self.highsetpickup=highsetpickup           
+        self.current=[]
+        self.current_fdr1_open=[]
+        self.current_fdr2_open=[]
+        self.time3=[]
+        self.time_fdr1_open=[]
+        self.time_fdr2_open=[]
+
+
+    def time_to_operate(self,I=2000):
+        
+        curvetypes=dict(NI=(0.00001399354,0.00010458841,0.99999866576,0.0,0.0),\
+                        SI=(0.00001399354,0.00010458841,0.99999866576,0.0,0.0),\
+                        VI=(1.0,13.5,1.0,0.0,0.0),\
+                        EI=(2.0,80.0,1.0,0.0,0.0),\
+                        )
+        
+        self.I=I
+        
+        a,b,c,d,e=curvetypes.get(unicode(self.curvetype))
+
+        multiple=(self.I/(self.pickup*self.ctratio))            
+
+        if (self.highset==True and self.I>(self.highsetpickup*self.ctratio)):
+            self.time=0.02
+        elif self.I>(self.pickup*self.ctratio):
+            self.time = self.TimeMultiplier * (d + (b / (math.pow(multiple,a) - c))) + e        
+        else:
+            self.time=50
+            
+        return self.time*(1-self.percent_travel)
+    
+    def curve_plot(self):
+        start = 1.2
+        stop = 20.0
+        samples = 100
+        self.x=[]
+        self.y=[]
+        #self.time_to_operate(
+        for i in np.arange(start,stop,samples):
+            self.x.append(i)
+            q=(self.TimeMultiplier * (d + (b / (math.pow(multiple,a) - c))) + e)
+            self.y.append(q)
+
 def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,feederct2,\
              tximp,inc_cbtime,inc_highsetpickup,inc_checkBox,\
              fdr1_cbtime,fdr1_highsetpickup,fdr1_checkBox,\
@@ -52,72 +114,6 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
     margin_store5=[]
     margin_store6=[]
 
-    ########################################################################
-
-    class CB_Relay(object):
-        """This class attempts to define all the parameters surrounding an inverse time overcurrent relay"""
-
-        #----------------------------------------------------------------------
-        def __init__(self,TimeMultiplier=0.25,ctratio=400.0,pickup=1.0,curvetype='NI',percent_travel=0.0,\
-                     cb_open_time=0.06, highsetpickup=10.0,highset=False):
-            """Constructor"""
-            self.TimeMultiplier=TimeMultiplier
-            self.pickup=pickup
-            self.ctratio=ctratio
-            self.curvetype=curvetype
-            self.percent_travel=percent_travel
-            self.tripped=False
-            self.pulse_counter=0 #how many pulses of fault current
-            self.cb_open_time=cb_open_time  #time in milliseconds
-            self.highset=highset
-            self.highsetpickup=highsetpickup           
-            self.current=[]
-            self.current_fdr1_open=[]
-            self.current_fdr2_open=[]
-            self.time3=[]
-            self.time_fdr1_open=[]
-            self.time_fdr2_open=[]
-            
-            
-            
-            
-
-        def time_to_operate(self,I=2000):
-            
-            curvetypes=dict(NI=(0.00001399354,0.00010458841,0.99999866576,0.0,0.0),\
-                            SI=(0.00001399354,0.00010458841,0.99999866576,0.0,0.0),\
-                            VI=(1.0,13.5,1.0,0.0,0.0),\
-                            EI=(2.0,80.0,1.0,0.0,0.0),\
-                            )
-            
-            self.I=I
-            
-            a,b,c,d,e=curvetypes.get(unicode(self.curvetype))
-
-            multiple=(self.I/(self.pickup*self.ctratio))            
-
-            if (self.highset==True and self.I>(self.highsetpickup*self.ctratio)):
-                self.time=0.02
-            elif self.I>(self.pickup*self.ctratio):
-                self.time = self.TimeMultiplier * (d + (b / (math.pow(multiple,a) - c))) + e        
-            else:
-                self.time=50
-                
-            return self.time*(1-self.percent_travel)
-
-            
-    ###################################################################################################
-    '''Instantiation of the feeder objects'''
-    '''
-    Inc_CT=incct*pickup0
-    Inc_TM=mult0
-
-    Fdr_CT1=feederct1*pickup1
-    Fdr_TM1=mult1
-    
-    Fdr_CT2=feederct2*pickup2
-    Fdr_TM2=mult2    
-   '''
     incomer=CB_Relay(mult0,incct,pickup0,inc_curve,0,inc_cbtime,inc_highsetpickup,inc_checkBox)  #Instantiation of Incomer object
     feederone=CB_Relay(mult1,feederct1,pickup1,fdr1_curve,0,fdr1_cbtime,fdr1_highsetpickup,fdr1_checkBox)  #Instantiation of feederone object
     feedertwo=CB_Relay(mult2,feederct2,pickup2,fdr2_curve,0,fdr2_cbtime,fdr2_highsetpickup,fdr2_checkBox)  #Instantiation of feedertwo object    
@@ -259,11 +255,8 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             margin_store5.append(20)
             margin_store6.append(0)
 
-#We need to get these numbers to the graphs into the application.
-
-#    return (m_store,incomer_current,incomer_current_fdr1_open,incomer_current_fdr2_open,ratio2)
-
-    return (m_store,margin_store,margin_store2,margin_store3,margin_store4,margin_store5,margin_store6,ratio2,incomer.time3,incomer.time_fdr1_open,incomer.time_fdr2_open,\
+    return (m_store,margin_store,margin_store2,margin_store3,margin_store4,margin_store5,margin_store6,ratio2,\
+            incomer.time3,incomer.time_fdr1_open,incomer.time_fdr2_open,\
             feederone.time3,feederone.time_fdr1_open,feederone.time_fdr2_open,\
             feedertwo.time3,feedertwo.time_fdr1_open,feedertwo.time_fdr2_open,\
             incomer.current,incomer.current_fdr1_open,incomer.current_fdr2_open,
@@ -271,27 +264,25 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             feedertwo.current,feedertwo.current_fdr1_open,feedertwo.current_fdr2_open,\
             )
 
-#main_seq(3)
 
-#main_seq(4)
-
+def overcurrent_plots(q):
+    
+    #Plot the ITOC curves
+    inc_time=[]
+    inc_current=[]
+    fdr_time=[]
+    fdr_current=[]
+    incomer.percent_travel=0.0
+    feederone.percent_travel=0.0
+    
+    for i in np.logspace(0,5,100):
+        if incomer.time_to_operate(I=i)<50:
+            inc_time.append(incomer.time_to_operate(I=i))
+            inc_current.append(i)
+        if incomer.time_to_operate(I=i)<50:
+            fdr_time.append(feederone.time_to_operate(I=i))
+            fdr_current.append(i)
 '''
-#Plot the ITOC curves
-inc_time=[]
-inc_current=[]
-fdr_time=[]
-fdr_current=[]
-incomer.percent_travel=0.0
-feederone.percent_travel=0.0
-
-for i in np.logspace(0,5,100):
-    if incomer.time_to_operate(I=i)<50:
-        inc_time.append(incomer.time_to_operate(I=i))
-        inc_current.append(i)
-    if incomer.time_to_operate(I=i)<50:
-        fdr_time.append(feederone.time_to_operate(I=i))
-        fdr_current.append(i)
-
 plotx, ploty = [], []
 plotx = abs(V_base/math.sqrt(3)/(Z_transformer)), abs(V_base/math.sqrt(3)/(Z_transformer))
 ploty = incomer.time_to_operate(I=plotx[0]),feederone.time_to_operate(I=plotx[1])

@@ -19,6 +19,11 @@ from PyQt4 import QtCore
 # Python Qt4 bindings for GUI objects
 from PyQt4 import QtGui
 
+from PyQt4.Qwt5 import *
+from PyQt4.Qwt5.qplt import *
+
+from DataDemo import DataPlot
+
 # import the MainWindow widget from the converted .ui files
 from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
@@ -37,6 +42,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.fdr2_curve=self.curveComboBox_3.addItems(sorted(bling))
         
         self.initUI()
+        
+        self.QwtWidget.show()
         
         self.dirty=True
         settings = QtCore.QSettings()
@@ -177,6 +184,23 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
                                                   self.fdr1_cbtime,self.fdr1_highset,self.fdr1_checkBox,\
                                                   self.fdr2_cbtime,self.fdr2_highset,self.fdr2_checkBox,\
                                                   self.inc_curve,self.fdr1_curve,self.fdr2_curve)
+        
+        #plot the qwt plot
+        '''
+        self.qwtPlot_1.setCanvasBackground(QtCore.Qt.white)
+        self.qwtPlot_1.x=np.arange(0.0, 100.1, 0.5)
+        self.qwtPlot_1.y = np.zeros(len(self.qwtPlot_1.x), np.float)
+        self.qwtPlot_1.z = np.zeros(len(self.qwtPlot_1.x), np.float)
+        
+        self.qwtPlot_1.setTitle("A Moving QwtPlot Demonstration")
+        self.qwtPlot_1.insertLegend(Qwt.QwtLegend(), Qwt.QwtPlot.BottomLegend);
+        
+        self.qwtPlot_1.show()
+        
+        self.qwtPlot_2=DataPlot()
+        self.qwtPlot_2.show()        
+        '''
+        #self.QwtWidget.show()
         
         #plot the graph on tab 2
         self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')

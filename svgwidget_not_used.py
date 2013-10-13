@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Python Qt4 bindings for GUI objects
-from PyQt4 import QtGui
+from PyQt4 import QtGui, QtSvg
 #from PySide import QtGui
 
 # import the Qt4Agg FigureCanvas object, that binds Figure to
@@ -24,7 +24,7 @@ class MplCanvas2(FigureCanvas):
         
         #I added this to allow the addition of a second axis
         #Might need to create to widgets- One with dual axis and one without.
-        #Might need to create to widgets- One with dual axis and one without.
+        
 
         # initialization of the canvas
         #FigureCanvas.__init__(self, self.fig)
@@ -34,7 +34,7 @@ class MplCanvas2(FigureCanvas):
         #FigureCanvas.updateGeometry(self)
 
 
-class MplWidget2(QtGui.QWidget):
+class MplWidget2(QtSvg.QWidget):
     """Widget defined in Qt Designer"""
     def __init__(self, parent = None):
         # initialization of Qt MainWindow widget
@@ -54,6 +54,3 @@ class MplWidget2(QtGui.QWidget):
         
         # set the layout to the vertical box
         self.setLayout(self.vbl)
-        
-      
-

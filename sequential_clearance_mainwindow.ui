@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1352</width>
-    <height>936</height>
+    <width>631</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -33,6 +33,563 @@
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout_10">
+    <item row="1" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Breaker Opening Time</string>
+           </property>
+           <property name="buddy">
+            <cstring>mplinc_cbtime_SpinBox</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox8">
+           <property name="toolTip">
+            <string>Feeder CT Primary Ratio</string>
+           </property>
+           <property name="suffix">
+            <string>/1</string>
+           </property>
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="minimum">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1200.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>400.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="4">
+          <widget class="QPushButton" name="mplpushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Re-calculate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox6">
+           <property name="toolTip">
+            <string>Incomer CT Primary Ratio</string>
+           </property>
+           <property name="suffix">
+            <string>/1</string>
+           </property>
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="minimum">
+            <double>200.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>4000.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>1200.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox7">
+           <property name="toolTip">
+            <string>Feeder CT Primary Ratio</string>
+           </property>
+           <property name="suffix">
+            <string>/1</string>
+           </property>
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="minimum">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1200.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>400.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="4">
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::TicksBelow</enum>
+           </property>
+           <property name="tickInterval">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QDoubleSpinBox" name="mplfdr1_highset_spinBox">
+           <property name="toolTip">
+            <string>Highset Pickup</string>
+           </property>
+           <property name="minimum">
+            <double>2.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>30.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>10.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox5">
+           <property name="toolTip">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pickup&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="maximum">
+            <double>2.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.250000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Feeder 2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox3">
+           <property name="toolTip">
+            <string>Feeder Multiplier</string>
+           </property>
+           <property name="minimum">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.200000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox2">
+           <property name="toolTip">
+            <string>Incomer Multiplier</string>
+           </property>
+           <property name="minimum">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.300000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Tx Impedance 20MVA single unit</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QDoubleSpinBox" name="mplinc_highset_SpinBox">
+           <property name="toolTip">
+            <string>Highset Pickup</string>
+           </property>
+           <property name="minimum">
+            <double>2.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>30.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>10.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Curve Type</string>
+           </property>
+           <property name="buddy">
+            <cstring>curveComboBox_1</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="4">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox">
+           <property name="toolTip">
+            <string>Zloop is the cable or overhead circuit between the two feeders
+Zsource in this instance is the transformer impedance</string>
+           </property>
+           <property name="minimum">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>10.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="value">
+            <double>2.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Feeder 1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox10">
+           <property name="toolTip">
+            <string>Feeder Multiplier</string>
+           </property>
+           <property name="minimum">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.200000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QDoubleSpinBox" name="mplfdr2_highset_SpinBox">
+           <property name="toolTip">
+            <string>Highset Pickup</string>
+           </property>
+           <property name="minimum">
+            <double>2.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>30.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>10.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="3">
+          <widget class="QDoubleSpinBox" name="mplfdr2_cbtime_SpinBox">
+           <property name="toolTip">
+            <string>opening time</string>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.060000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QComboBox" name="curveComboBox_3">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>NI</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Zloop to Zsource ratio</string>
+           </property>
+           <property name="buddy">
+            <cstring>mpldoubleSpinBox</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QComboBox" name="curveComboBox_2">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>NI</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QSpinBox" name="mplspinBox">
+           <property name="suffix">
+            <string> percent</string>
+           </property>
+           <property name="minimum">
+            <number>5</number>
+           </property>
+           <property name="maximum">
+            <number>20</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="text">
+            <string>Pickup</string>
+           </property>
+           <property name="buddy">
+            <cstring>mpldoubleSpinBox4</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QDoubleSpinBox" name="mplinc_cbtime_SpinBox">
+           <property name="toolTip">
+            <string>opening time</string>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.060000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox9">
+           <property name="toolTip">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pickup&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="maximum">
+            <double>2.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.250000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Time Multiplier</string>
+           </property>
+           <property name="buddy">
+            <cstring>mpldoubleSpinBox2</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3">
+          <widget class="QCheckBox" name="mplfdr2_checkBox">
+           <property name="text">
+            <string>Highset Y/N</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Incomer</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QCheckBox" name="mplinc_checkBox">
+           <property name="text">
+            <string>Highset Y/N</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>High Set Pickup</string>
+           </property>
+           <property name="buddy">
+            <cstring>mplinc_highset_SpinBox</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox4">
+           <property name="toolTip">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pickup&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="maximum">
+            <double>2.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.250000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="QCheckBox" name="mplfdr1_checkBox">
+           <property name="text">
+            <string>Highset Y/N</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>CT Ratio</string>
+           </property>
+           <property name="buddy">
+            <cstring>mpldoubleSpinBox6</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="2">
+          <widget class="QDoubleSpinBox" name="mplfdr1_cbtime_SpinBox">
+           <property name="toolTip">
+            <string>opening time</string>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.060000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="curveComboBox_1">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>NI</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="2" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy">
@@ -47,6 +604,9 @@
         <height>0</height>
        </size>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Change the curve shapes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
       </property>
@@ -54,175 +614,11 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>15</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
       </property>
-      <widget class="QWidget" name="tab_1">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Margin Plot Detail</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0">
-         <widget class="MplWidget" name="mpl_2" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>Matplotlib</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Margin Plot</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0">
-         <widget class="MplWidget" name="mpl" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string>Matplotlib</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Tesla Wiki</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_6">
-        <item row="0" column="0">
-         <widget class="QWebView" name="webView">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="url">
-           <url>
-            <string>http://wiki.tesla.local/index.php/Sequential_Clearance</string>
-           </url>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_3">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Incomer</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0">
-         <widget class="MplWidget" name="mpl_5" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>Matplotlib</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Feeder1</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
-         <widget class="MplWidget" name="mpl_6" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>Matplotlib</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Feeder2</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
-         <widget class="MplWidget" name="mpl_7" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>Matplotlib</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
       <widget class="QWidget" name="tab_6">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -264,48 +660,471 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_7">
+      <widget class="QWidget" name="tab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
-        <string>TwinView</string>
+        <string>Margin Plot</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_11">
-        <item row="0" column="0">
-         <widget class="MplWidget2" name="mpl_8" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QFrame" name="frame_9">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>300</height>
-           </size>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_1" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="MplWidget2" name="mpl_9" native="true">
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_1">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Margin Plot Detail</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QFrame" name="frame_8">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_2" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Incomer</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QFrame" name="frame_6">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_15">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_5" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_7">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_16">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_11" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Feeder1</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QFrame" name="frame_4">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_14">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_6" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>5</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_5">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_7" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>5</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_10">
+       <attribute name="title">
+        <string>ITOC Curves</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QFrame" name="frame_12">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_17">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_12" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_11">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_18">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_3" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_10">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_19">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_4" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Matplotlib</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Feeder2</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3"/>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Tesla Wiki</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <widget class="QWebView" name="webView">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>300</height>
-           </size>
+          <property name="url">
+           <url>
+            <string>http://www.blahdeblah.co.nz/</string>
+           </url>
+          </property>
+          <property name="renderHints">
+           <set>QPainter::Antialiasing|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing</set>
           </property>
          </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_8">
+      <widget class="QWidget" name="tab_9">
        <attribute name="title">
         <string>Page</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="MplWidget" name="mpl_8" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Matplotlib</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>PolarView</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QFrame" name="frame_14">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_20">
+           <item row="0" column="0">
+            <widget class="MplWidget2" name="mpl_10" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_13">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="0" column="0">
+            <widget class="MplWidget2" name="mpl_9" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="icon">
+        <iconset resource="sequential_clearance_resources2.qrc">
+         <normaloff>:/images/images/schematic_from_model_view.svg</normaloff>:/images/images/schematic_from_model_view.svg</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>CurveEd</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_13">
         <item row="0" column="0">
@@ -318,558 +1137,172 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_12">
            <item row="0" column="0">
-            <widget class="QTableWidget" name="tableWidget"/>
+            <widget class="QTableWidget" name="tableWidget">
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="rowCount">
+              <number>9</number>
+             </property>
+             <property name="columnCount">
+              <number>9</number>
+             </property>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+             <row/>
+             <column/>
+             <column/>
+             <column/>
+             <column/>
+             <column/>
+             <column/>
+             <column/>
+             <column/>
+             <column/>
+            </widget>
            </item>
           </layout>
          </widget>
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QFrame" name="frame">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="1" column="3">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox8">
-           <property name="toolTip">
-            <string>Feeder CT Primary Ratio</string>
+      <widget class="QWidget" name="tab_11">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>601</width>
+             <height>367</height>
+            </rect>
            </property>
-           <property name="suffix">
-            <string>/1</string>
-           </property>
-           <property name="decimals">
-            <number>0</number>
-           </property>
-           <property name="minimum">
-            <double>50.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>1200.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>50.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>400.000000000000000</double>
-           </property>
+           <layout class="QGridLayout" name="gridLayout_21">
+            <item row="0" column="0">
+             <widget class="MplWidget" name="mpl_13" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Matplotlib</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QComboBox" name="curveComboBox_1">
-           <property name="editable">
-            <bool>false</bool>
-           </property>
-           <item>
-            <property name="text">
-             <string>NI</string>
-            </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_12">
+       <attribute name="title">
+        <string>qwt</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QFrame" name="frame_15">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_22">
+           <item row="0" column="1">
+            <widget class="QwtThermo" name="Thermo"/>
            </item>
-          </widget>
-         </item>
-         <item row="6" column="2">
-          <widget class="QCheckBox" name="mplfdr1_checkBox">
-           <property name="text">
-            <string>Highset Y/N</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="3">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox9">
-           <property name="toolTip">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pickup&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="maximum">
-            <double>2.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.250000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QDoubleSpinBox" name="mplinc_highset_SpinBox">
-           <property name="toolTip">
-            <string>Highset Pickup</string>
-           </property>
-           <property name="minimum">
-            <double>2.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>30.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>10.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox6">
-           <property name="toolTip">
-            <string>Incomer CT Primary Ratio</string>
-           </property>
-           <property name="suffix">
-            <string>/1</string>
-           </property>
-           <property name="decimals">
-            <number>0</number>
-           </property>
-           <property name="minimum">
-            <double>200.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>4000.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>50.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>1200.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>Curve Type</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>High Set Pickup</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Feeder 2</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Incomer</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="3">
-          <widget class="QCheckBox" name="mplfdr2_checkBox">
-           <property name="text">
-            <string>Highset Y/N</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="4">
-          <widget class="QSpinBox" name="mplspinBox">
-           <property name="suffix">
-            <string> percent</string>
-           </property>
-           <property name="minimum">
-            <number>5</number>
-           </property>
-           <property name="maximum">
-            <number>20</number>
-           </property>
-           <property name="value">
-            <number>10</number>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="3">
-          <widget class="QDoubleSpinBox" name="mplfdr2_highset_SpinBox">
-           <property name="toolTip">
-            <string>Highset Pickup</string>
-           </property>
-           <property name="minimum">
-            <double>2.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>30.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>10.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QDoubleSpinBox" name="mplfdr1_highset_spinBox">
-           <property name="toolTip">
-            <string>Highset Pickup</string>
-           </property>
-           <property name="minimum">
-            <double>2.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>30.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>10.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="3">
-          <widget class="QComboBox" name="curveComboBox_3">
-           <property name="editable">
-            <bool>false</bool>
-           </property>
-           <item>
-            <property name="text">
-             <string>NI</string>
-            </property>
+           <item row="0" column="2">
+            <widget class="QwtKnob" name="Knob"/>
            </item>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox10">
-           <property name="toolTip">
-            <string>Feeder Multiplier</string>
-           </property>
-           <property name="minimum">
-            <double>0.050000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.280000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Time Multiplier</string>
-           </property>
-           <property name="buddy">
-            <cstring>mpldoubleSpinBox2</cstring>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QLabel" name="label_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Feeder 1</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="4">
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Tx Impedance 20MVA single unit</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox3">
-           <property name="toolTip">
-            <string>Feeder Multiplier</string>
-           </property>
-           <property name="minimum">
-            <double>0.050000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.280000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="QComboBox" name="curveComboBox_2">
-           <property name="editable">
-            <bool>false</bool>
-           </property>
-           <item>
-            <property name="text">
-             <string>NI</string>
-            </property>
+           <item row="0" column="0">
+            <widget class="QwtWidget" name="QwtWidget" native="true"/>
            </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_13">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_25">
+        <item row="0" column="0">
+         <widget class="QStackedWidget" name="stackedWidget">
+          <widget class="QWidget" name="page">
+           <layout class="QGridLayout" name="gridLayout_24">
+            <item row="0" column="0">
+             <widget class="QwtCompass" name="Compass">
+              <property name="lineWidth">
+               <number>4</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item row="4" column="4">
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Zloop to Zsource ratio</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="4">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox">
-           <property name="toolTip">
-            <string>Zloop is the cable or overhead circuit between the two feeders
-Zsource in this instance is the transformer impedance</string>
-           </property>
-           <property name="minimum">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>10.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.050000000000000</double>
-           </property>
-           <property name="value">
-            <double>2.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox2">
-           <property name="toolTip">
-            <string>Incomer Multiplier</string>
-           </property>
-           <property name="minimum">
-            <double>0.050000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.300000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox5">
-           <property name="toolTip">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pickup&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="maximum">
-            <double>2.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.250000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string>Breaker Opening Time</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>CT Ratio</string>
-           </property>
-           <property name="buddy">
-            <cstring>mpldoubleSpinBox6</cstring>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QCheckBox" name="mplinc_checkBox">
-           <property name="text">
-            <string>Highset Y/N</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox4">
-           <property name="toolTip">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pickup&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="maximum">
-            <double>2.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>1.250000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
-           </property>
-           <property name="text">
-            <string>Pickup</string>
-           </property>
-           <property name="buddy">
-            <cstring>mpldoubleSpinBox4</cstring>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QDoubleSpinBox" name="mpldoubleSpinBox7">
-           <property name="toolTip">
-            <string>Feeder CT Primary Ratio</string>
-           </property>
-           <property name="suffix">
-            <string>/1</string>
-           </property>
-           <property name="decimals">
-            <number>0</number>
-           </property>
-           <property name="minimum">
-            <double>50.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>1200.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>50.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>400.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="1">
-          <widget class="QDoubleSpinBox" name="mplinc_cbtime_SpinBox">
-           <property name="toolTip">
-            <string>opening time</string>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.060000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="2">
-          <widget class="QDoubleSpinBox" name="mplfdr1_cbtime_SpinBox">
-           <property name="toolTip">
-            <string>opening time</string>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.060000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="3">
-          <widget class="QDoubleSpinBox" name="mplfdr2_cbtime_SpinBox">
-           <property name="toolTip">
-            <string>opening time</string>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.060000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="4">
-          <widget class="QPushButton" name="mplpushButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Re-calculate</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="4">
-          <widget class="QSlider" name="horizontalSlider">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="tickPosition">
-            <enum>QSlider::TicksBelow</enum>
-           </property>
-           <property name="tickInterval">
-            <number>5</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+          <widget class="QWidget" name="page_2"/>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_14">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="GlobeWidget" name="globeWidget"/>
+        </item>
+        <item>
+         <widget class="GeoLocationWidget" name="geolocationWidget"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_15">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <item>
+         <widget class="QDeclarativeView" name="declarativeView">
+          <property name="resizeMode">
+           <enum>QDeclarativeView::SizeRootObjectToView</enum>
+          </property>
+          <property name="source">
+           <url>
+            <string>qrc:/newPrefix/view.qml</string>
+           </url>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -879,7 +1312,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1352</width>
+     <width>631</width>
      <height>21</height>
     </rect>
    </property>
@@ -905,9 +1338,44 @@ p, li { white-space: pre-wrap; }
  </widget>
  <customwidgets>
   <customwidget>
+   <class>GeoLocationWidget</class>
+   <extends>QWidget</extends>
+   <header>QQ_Widgets.geolocationwidget</header>
+  </customwidget>
+  <customwidget>
+   <class>GlobeWidget</class>
+   <extends>QWidget</extends>
+   <header>QQ_Widgets.globewidget</header>
+  </customwidget>
+  <customwidget>
+   <class>QDeclarativeView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtDeclarative/QDeclarativeView</header>
+  </customwidget>
+  <customwidget>
    <class>QWebView</class>
    <extends>QWidget</extends>
    <header>QtWebKit/QWebView</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtCompass</class>
+   <extends>QwtDial</extends>
+   <header>qwt_compass.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtDial</class>
+   <extends>QWidget</extends>
+   <header>qwt_dial.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtKnob</class>
+   <extends>QWidget</extends>
+   <header>qwt_knob.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtThermo</class>
+   <extends>QWidget</extends>
+   <header>qwt_thermo.h</header>
   </customwidget>
   <customwidget>
    <class>MplWidget</class>
@@ -921,30 +1389,48 @@ p, li { white-space: pre-wrap; }
    <header location="global">mplwidget2.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>QwtWidget</class>
+   <extends>QWidget</extends>
+   <header>qwtwidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>mpldoubleSpinBox6</tabstop>
+  <tabstop>mpldoubleSpinBox2</tabstop>
+  <tabstop>curveComboBox_1</tabstop>
   <tabstop>mpldoubleSpinBox4</tabstop>
   <tabstop>mplinc_highset_SpinBox</tabstop>
   <tabstop>mplinc_checkBox</tabstop>
   <tabstop>mplinc_cbtime_SpinBox</tabstop>
   <tabstop>mpldoubleSpinBox7</tabstop>
+  <tabstop>mpldoubleSpinBox3</tabstop>
+  <tabstop>curveComboBox_2</tabstop>
   <tabstop>mpldoubleSpinBox5</tabstop>
   <tabstop>mplfdr1_highset_spinBox</tabstop>
   <tabstop>mplfdr1_checkBox</tabstop>
   <tabstop>mplfdr1_cbtime_SpinBox</tabstop>
   <tabstop>mpldoubleSpinBox8</tabstop>
+  <tabstop>mpldoubleSpinBox10</tabstop>
+  <tabstop>curveComboBox_3</tabstop>
   <tabstop>mpldoubleSpinBox9</tabstop>
   <tabstop>mplfdr2_highset_SpinBox</tabstop>
   <tabstop>mplfdr2_checkBox</tabstop>
   <tabstop>mplfdr2_cbtime_SpinBox</tabstop>
   <tabstop>mplspinBox</tabstop>
   <tabstop>mpldoubleSpinBox</tabstop>
+  <tabstop>horizontalSlider</tabstop>
   <tabstop>mplpushButton</tabstop>
+  <tabstop>tabWidget</tabstop>
   <tabstop>webView</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>Knob</tabstop>
  </tabstops>
  <resources>
   <include location="sequential_clearance_resources.qrc"/>
+  <include location="sequential_clearance_resources2.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -954,12 +1440,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>129</y>
+     <x>336</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -970,12 +1456,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>91</y>
+     <x>336</x>
+     <y>97</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -986,12 +1472,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1088</x>
-     <y>173</y>
+     <x>618</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1002,12 +1488,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>146</y>
+     <x>235</x>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1018,12 +1504,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>91</y>
+     <x>235</x>
+     <y>97</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1034,12 +1520,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>146</y>
+     <x>336</x>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1050,12 +1536,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>74</y>
+     <x>235</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1066,12 +1552,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>74</y>
+     <x>336</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1082,12 +1568,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1088</x>
-     <y>64</y>
+     <x>618</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1098,12 +1584,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>874</x>
-     <y>64</y>
+     <x>436</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1114,12 +1600,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>874</x>
-     <y>146</y>
+     <x>436</x>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1130,12 +1616,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>874</x>
-     <y>91</y>
+     <x>436</x>
+     <y>97</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1146,12 +1632,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>874</x>
-     <y>227</y>
+     <x>436</x>
+     <y>222</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1162,12 +1648,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>227</y>
+     <x>336</x>
+     <y>222</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1178,12 +1664,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>227</y>
+     <x>235</x>
+     <y>222</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1194,12 +1680,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>874</x>
-     <y>173</y>
+     <x>436</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1210,12 +1696,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>173</y>
+     <x>336</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1226,12 +1712,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>173</y>
+     <x>235</x>
+     <y>172</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1242,12 +1728,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>874</x>
-     <y>199</y>
+     <x>436</x>
+     <y>197</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1258,12 +1744,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>634</x>
-     <y>199</y>
+     <x>336</x>
+     <y>197</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1274,12 +1760,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>199</y>
+     <x>235</x>
+     <y>197</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1290,12 +1776,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>367</x>
-     <y>108</y>
+     <x>235</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1306,12 +1792,28 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>900</x>
-     <y>129</y>
+     <x>436</x>
+     <y>122</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1339</x>
-     <y>236</y>
+     <x>618</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Knob</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Thermo</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>546</x>
+     <y>343</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>345</y>
     </hint>
    </hints>
   </connection>

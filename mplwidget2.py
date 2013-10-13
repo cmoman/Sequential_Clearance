@@ -25,7 +25,7 @@ class MplCanvas2(FigureCanvas):
         
         #I added this to allow the addition of a second axis
         #Might need to create to widgets- One with dual axis and one without.
-        
+        #Might need to create to widgets- One with dual axis and one without.
 
         # initialization of the canvas
         #FigureCanvas.__init__(self, self.fig)

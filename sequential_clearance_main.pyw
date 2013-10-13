@@ -20,7 +20,7 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 
 # import the MainWindow widget from the converted .ui files
-from ui_qtdesigner import Ui_MplMainWindow
+from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 

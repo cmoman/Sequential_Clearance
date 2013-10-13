@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/schematic_from_model_view.svg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>view.qml</file>
+  </qresource>
+</RCC>

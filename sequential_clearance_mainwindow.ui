@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
-    <height>672</height>
+    <width>674</width>
+    <height>488</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -614,7 +614,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>15</number>
+       <number>4</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -838,29 +838,16 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_14">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_6" native="true">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>5</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="toolTip">
-              <string>Matplotlib</string>
-             </property>
-            </widget>
+            <widget class="MplWidget" name="mpl_6" native="true"/>
            </item>
           </layout>
          </widget>
         </item>
         <item>
          <widget class="QFrame" name="frame_5">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -869,21 +856,55 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_7" native="true">
+            <widget class="MplWidget" name="mpl_8" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Feeder2</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_3">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_7" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QFrame" name="frame_13">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mpl_9" native="true">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>5</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="toolTip">
-              <string>Matplotlib</string>
              </property>
             </widget>
            </item>
@@ -992,18 +1013,6 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <attribute name="title">
-        <string>Feeder2</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_3"/>
-      </widget>
       <widget class="QWidget" name="tab_2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1025,279 +1034,11 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="url">
            <url>
-            <string>http://www.blahdeblah.co.nz/</string>
+            <string>http://wiki.tesla.local/</string>
            </url>
           </property>
           <property name="renderHints">
            <set>QPainter::Antialiasing|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_9">
-       <attribute name="title">
-        <string>Page</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0">
-         <widget class="MplWidget" name="mpl_8" native="true">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>Matplotlib</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_7">
-       <attribute name="title">
-        <string>PolarView</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
-        <item>
-         <widget class="QFrame" name="frame_14">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_20">
-           <item row="0" column="0">
-            <widget class="MplWidget2" name="mpl_10" native="true">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QFrame" name="frame_13">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_11">
-           <item row="0" column="0">
-            <widget class="MplWidget2" name="mpl_9" native="true">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>50</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_8">
-       <attribute name="icon">
-        <iconset resource="sequential_clearance_resources2.qrc">
-         <normaloff>:/images/images/schematic_from_model_view.svg</normaloff>:/images/images/schematic_from_model_view.svg</iconset>
-       </attribute>
-       <attribute name="title">
-        <string>CurveEd</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_13">
-        <item row="0" column="0">
-         <widget class="QFrame" name="frame_3">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_12">
-           <item row="0" column="0">
-            <widget class="QTableWidget" name="tableWidget">
-             <property name="alternatingRowColors">
-              <bool>true</bool>
-             </property>
-             <property name="sortingEnabled">
-              <bool>true</bool>
-             </property>
-             <property name="rowCount">
-              <number>9</number>
-             </property>
-             <property name="columnCount">
-              <number>9</number>
-             </property>
-             <row/>
-             <row/>
-             <row/>
-             <row/>
-             <row/>
-             <row/>
-             <row/>
-             <row/>
-             <row/>
-             <column/>
-             <column/>
-             <column/>
-             <column/>
-             <column/>
-             <column/>
-             <column/>
-             <column/>
-             <column/>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_11">
-       <attribute name="title">
-        <string>Page</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_7">
-        <item>
-         <widget class="QScrollArea" name="scrollArea">
-          <property name="widgetResizable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="scrollAreaWidgetContents">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>601</width>
-             <height>367</height>
-            </rect>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_21">
-            <item row="0" column="0">
-             <widget class="MplWidget" name="mpl_13" native="true">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>Matplotlib</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_12">
-       <attribute name="title">
-        <string>qwt</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
-        <item>
-         <widget class="QFrame" name="frame_15">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_22">
-           <item row="0" column="1">
-            <widget class="QwtThermo" name="Thermo"/>
-           </item>
-           <item row="0" column="2">
-            <widget class="QwtKnob" name="Knob"/>
-           </item>
-           <item row="0" column="0">
-            <widget class="QwtWidget" name="QwtWidget" native="true"/>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_13">
-       <attribute name="title">
-        <string>Page</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_25">
-        <item row="0" column="0">
-         <widget class="QStackedWidget" name="stackedWidget">
-          <widget class="QWidget" name="page">
-           <layout class="QGridLayout" name="gridLayout_24">
-            <item row="0" column="0">
-             <widget class="QwtCompass" name="Compass">
-              <property name="lineWidth">
-               <number>4</number>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="page_2"/>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_14">
-       <attribute name="title">
-        <string>Page</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
-        <item>
-         <widget class="GlobeWidget" name="globeWidget"/>
-        </item>
-        <item>
-         <widget class="GeoLocationWidget" name="geolocationWidget"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_15">
-       <attribute name="title">
-        <string>Page</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_10">
-        <item>
-         <widget class="QDeclarativeView" name="declarativeView">
-          <property name="resizeMode">
-           <enum>QDeclarativeView::SizeRootObjectToView</enum>
-          </property>
-          <property name="source">
-           <url>
-            <string>qrc:/newPrefix/view.qml</string>
-           </url>
           </property>
          </widget>
         </item>
@@ -1312,7 +1053,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>631</width>
+     <width>674</width>
      <height>21</height>
     </rect>
    </property>
@@ -1338,61 +1079,14 @@ p, li { white-space: pre-wrap; }
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GeoLocationWidget</class>
-   <extends>QWidget</extends>
-   <header>QQ_Widgets.geolocationwidget</header>
-  </customwidget>
-  <customwidget>
-   <class>GlobeWidget</class>
-   <extends>QWidget</extends>
-   <header>QQ_Widgets.globewidget</header>
-  </customwidget>
-  <customwidget>
-   <class>QDeclarativeView</class>
-   <extends>QGraphicsView</extends>
-   <header>QtDeclarative/QDeclarativeView</header>
-  </customwidget>
-  <customwidget>
    <class>QWebView</class>
    <extends>QWidget</extends>
    <header>QtWebKit/QWebView</header>
   </customwidget>
   <customwidget>
-   <class>QwtCompass</class>
-   <extends>QwtDial</extends>
-   <header>qwt_compass.h</header>
-  </customwidget>
-  <customwidget>
-   <class>QwtDial</class>
-   <extends>QWidget</extends>
-   <header>qwt_dial.h</header>
-  </customwidget>
-  <customwidget>
-   <class>QwtKnob</class>
-   <extends>QWidget</extends>
-   <header>qwt_knob.h</header>
-  </customwidget>
-  <customwidget>
-   <class>QwtThermo</class>
-   <extends>QWidget</extends>
-   <header>qwt_thermo.h</header>
-  </customwidget>
-  <customwidget>
    <class>MplWidget</class>
    <extends>QWidget</extends>
    <header location="global">mplwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>MplWidget2</class>
-   <extends>QWidget</extends>
-   <header location="global">mplwidget2.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QwtWidget</class>
-   <extends>QWidget</extends>
-   <header>qwtwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
@@ -1424,9 +1118,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>mplpushButton</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>webView</tabstop>
-  <tabstop>tableWidget</tabstop>
-  <tabstop>scrollArea</tabstop>
-  <tabstop>Knob</tabstop>
  </tabstops>
  <resources>
   <include location="sequential_clearance_resources.qrc"/>
@@ -1798,22 +1489,6 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>618</x>
      <y>222</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>Knob</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>Thermo</receiver>
-   <slot>setValue(double)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>546</x>
-     <y>343</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>453</x>
-     <y>345</y>
     </hint>
    </hints>
   </connection>

@@ -32,6 +32,8 @@ class CB_Relay(object):
         self.time3=[]
         self.time_fdr1_open=[]
         self.time_fdr2_open=[]
+        
+        self.time_to_operate()
 
 
     def time_to_operate(self,I=2000):
@@ -45,13 +47,14 @@ class CB_Relay(object):
         self.I=I
         
         a,b,c,d,e=curvetypes.get(unicode(self.curvetype))
+        self.a,self.b,self.c,self.d,self.e=a,b,c,d,e
 
-        multiple=(self.I/(self.pickup*self.ctratio))            
+        self.multiple=(self.I/(self.pickup*self.ctratio))            
 
         if (self.highset==True and self.I>(self.highsetpickup*self.ctratio)):
             self.time=0.02
         elif self.I>(self.pickup*self.ctratio):
-            self.time = self.TimeMultiplier * (d + (b / (math.pow(multiple,a) - c))) + e        
+            self.time = self.TimeMultiplier * (d + (b / (math.pow(self.multiple,a) - c))) + e        
         else:
             self.time=50
             
@@ -61,13 +64,16 @@ class CB_Relay(object):
         start = 1.2
         stop = 20.0
         samples = 100
-        self.x=[]
-        self.y=[]
+        x=[]
+        y=[]
         #self.time_to_operate(
-        for i in np.arange(start,stop,samples):
-            self.x.append(i)
-            q=(self.TimeMultiplier * (d + (b / (math.pow(multiple,a) - c))) + e)
-            self.y.append(q)
+        for i in np.linspace(start,stop,samples):
+            
+            q=(self.TimeMultiplier * (self.d + (self.b / (math.pow(i,self.a) - self.c))) + self.e)
+            x.append((i*self.pickup*self.ctratio))
+            y.append(q)
+            #print i
+        return x,y
 
 def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,feederct2,\
              tximp,inc_cbtime,inc_highsetpickup,inc_checkBox,\
@@ -116,7 +122,13 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
 
     incomer=CB_Relay(mult0,incct,pickup0,inc_curve,0,inc_cbtime,inc_highsetpickup,inc_checkBox)  #Instantiation of Incomer object
     feederone=CB_Relay(mult1,feederct1,pickup1,fdr1_curve,0,fdr1_cbtime,fdr1_highsetpickup,fdr1_checkBox)  #Instantiation of feederone object
-    feedertwo=CB_Relay(mult2,feederct2,pickup2,fdr2_curve,0,fdr2_cbtime,fdr2_highsetpickup,fdr2_checkBox)  #Instantiation of feedertwo object    
+    feedertwo=CB_Relay(mult2,feederct2,pickup2,fdr2_curve,0,fdr2_cbtime,fdr2_highsetpickup,fdr2_checkBox)  #Instantiation of feedertwo object 
+    
+    q1=incomer.curve_plot()
+    q2=feederone.curve_plot()
+    q3=feedertwo.curve_plot()
+    
+    #print q1
 
     '''Fault calculation functions'''
 
@@ -261,7 +273,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             feedertwo.time3,feedertwo.time_fdr1_open,feedertwo.time_fdr2_open,\
             incomer.current,incomer.current_fdr1_open,incomer.current_fdr2_open,
             feederone.current,feederone.current_fdr1_open,feederone.current_fdr2_open,
-            feedertwo.current,feedertwo.current_fdr1_open,feedertwo.current_fdr2_open,\
+            feedertwo.current,feedertwo.current_fdr1_open,feedertwo.current_fdr2_open,q1,q2,q3\
             )
 
 

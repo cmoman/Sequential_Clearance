@@ -144,7 +144,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         #m_store,incomer_current,incomer_current_fdr1_open,incomer_current_fdr2_open,bling = seq.main_seq(self.ratio)
         m_store,margin_store,margin_store2,margin_store3,margin_store4,margin_store5,margin_store6,\
-            bling,j1,j2,j3,k1,k2,k3,l1,l2,l3,m1,m2,m3,n1,n2,n3,o1,o2,o3 = seq.main_seq(self.ratio,self.mult0,self.mult1,self.mult2,\
+            bling,j1,j2,j3,k1,k2,k3,l1,l2,l3,m1,m2,m3,n1,n2,n3,o1,o2,o3,q1,q2,q3 = seq.main_seq(self.ratio,self.mult0,self.mult1,self.mult2,\
                                                   self.pickup0,self.pickup1,self.pickup2,\
                                                   self.incct,self.feederct1,self.feederct2,\
                                                   self.tximp,\
@@ -187,26 +187,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_2.canvas.ax2.legend(loc=2)        
         self.mpl_2.canvas.draw()
         
-        self.mpl_3.canvas.ax.clear()
-        self.mpl_3.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
-        self.mpl_3.canvas.ax.set_ylabel('Time')
-        self.mpl_3.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='g', marker='x', label='Incomer time for 2nd trip')
-        self.mpl_3.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='r', marker='x', label='Feeder time for 2nd trip')
-        self.mpl_3.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='b', marker='x', label='Second trip margin')
-        self.mpl_3.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='black', marker='x', label='First trip Margin')
-        self.mpl_3.canvas.ax.set_ylim(0.0,5.0)
-        self.mpl_3.canvas.ax.legend(loc='best')
-        self.mpl_3.canvas.draw()
-        
-        self.mpl_4.canvas.ax.clear()
-        self.mpl_4.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
-        self.mpl_4.canvas.ax.set_ylabel('Time')
-        self.mpl_4.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='g', marker='x', label='Incomer time for 2nd trip')
-        self.mpl_4.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='r', marker='x', label='Feeder time for 2nd trip')
-        self.mpl_4.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='b', marker='x', label='Second trip margin')
-        self.mpl_4.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='black', marker='x', label='First trip Margin')
-        self.mpl_4.canvas.ax.set_ylim(0.0,5.0)
-        self.mpl_4.canvas.ax.legend(loc='best')        
+     
         
         self.mpl_5.canvas.ax.clear()
         self.mpl_5.canvas.ax2.clear()
@@ -280,6 +261,31 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_11.canvas.ax.legend(loc=2)
         self.mpl_11.canvas.ax2.legend(loc=1)
         self.mpl_11.canvas.draw()
+        
+        self.mpl_12.canvas.ax.clear()
+        self.mpl_12.canvas.ax.set_title("Incomer OC(IT) plot")
+        x2 , y2=q1
+        self.mpl_12.canvas.ax.loglog(x2,y2,marker='.',label='Inc Time')
+        self.mpl_12.canvas.ax.grid(True)
+        self.mpl_12.canvas.draw()
+        
+        self.mpl_3.canvas.ax.clear()
+        x2,y2=q2
+        self.mpl_3.canvas.ax.set_title("Feeder 1 OC(IT) plot")
+        self.mpl_3.canvas.ax.loglog(x2,y2,antialiased=True,alpha=.5,color='g', marker=',', label='Fdr 1Time')
+        self.mpl_3.canvas.ax.grid(True)
+        self.mpl_3.canvas.ax.set_ylabel('Time')
+        self.mpl_3.canvas.ax.legend(loc='best')
+        self.mpl_3.canvas.draw()
+        
+        self.mpl_4.canvas.ax.clear()
+        self.mpl_4.canvas.ax.set_title("Feeder 2 OC(IT) plot")
+        x2,y2=q3
+        self.mpl_4.canvas.ax.loglog(x2,y2,antialiased=True,alpha=.5,color='r', marker=',', label='Fdr2 Time')
+        self.mpl_4.canvas.ax.grid(True)
+        self.mpl_4.canvas.ax.set_ylabel('Time')
+        self.mpl_4.canvas.ax.legend(loc='best')   
+        
       
         
 def fakeIt():

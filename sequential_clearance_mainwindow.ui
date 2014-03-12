@@ -614,7 +614,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -825,7 +825,7 @@ p, li { white-space: pre-wrap; }
         </sizepolicy>
        </property>
        <attribute name="title">
-        <string>Feeder1</string>
+        <string>Feeder1/2</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
@@ -871,7 +871,7 @@ p, li { white-space: pre-wrap; }
         </sizepolicy>
        </property>
        <attribute name="title">
-        <string>Feeder2</string>
+        <string>Spare</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">

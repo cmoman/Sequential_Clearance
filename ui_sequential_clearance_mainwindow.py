@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'sequential_clearance_mainwindow.ui'
 #
-# Created: Tue Feb 18 23:03:42 2014
+# Created: Wed Mar 12 22:17:25 2014
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -657,8 +657,8 @@ class Ui_MplMainWindow(object):
         self.mpl_5.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_11.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QtGui.QApplication.translate("MplMainWindow", "Incomer", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QtGui.QApplication.translate("MplMainWindow", "Feeder1", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QtGui.QApplication.translate("MplMainWindow", "Feeder2", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QtGui.QApplication.translate("MplMainWindow", "Feeder1/2", None, QtGui.QApplication.UnicodeUTF8))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QtGui.QApplication.translate("MplMainWindow", "Spare", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_12.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_3.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_4.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))

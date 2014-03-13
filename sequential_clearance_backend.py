@@ -81,7 +81,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
              fdr2_cbtime,fdr2_highsetpickup,fdr2_checkBox,
              inc_curve,fdr1_curve,fdr2_curve):
 
-    resolution=0.01
+    resolution=0.1
     Tx_percentage_impedance=tximp
     Tx_impedance_angle=85
     Tx_impedance=complex(cm.rect(Tx_percentage_impedance,math.radians(Tx_impedance_angle)))
@@ -277,28 +277,4 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             )
 
 
-def overcurrent_plots(q):
-    
-    #Plot the ITOC curves
-    inc_time=[]
-    inc_current=[]
-    fdr_time=[]
-    fdr_current=[]
-    incomer.percent_travel=0.0
-    feederone.percent_travel=0.0
-    
-    for i in np.logspace(0,5,100):
-        if incomer.time_to_operate(I=i)<50:
-            inc_time.append(incomer.time_to_operate(I=i))
-            inc_current.append(i)
-        if incomer.time_to_operate(I=i)<50:
-            fdr_time.append(feederone.time_to_operate(I=i))
-            fdr_current.append(i)
-'''
-plotx, ploty = [], []
-plotx = abs(V_base/math.sqrt(3)/(Z_transformer)), abs(V_base/math.sqrt(3)/(Z_transformer))
-ploty = incomer.time_to_operate(I=plotx[0]),feederone.time_to_operate(I=plotx[1])
-plotdiff = incomer.time_to_operate(I=plotx[0])- feederone.time_to_operate(I=plotx[1])
-
-'''
 

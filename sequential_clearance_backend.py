@@ -58,7 +58,7 @@ class CB_Relay(object):
         else:
             self.time=50
             
-        return self.time*(1-self.percent_travel)
+        return self.time
     
     def curve_plot(self):
         start = 1.2
@@ -74,6 +74,16 @@ class CB_Relay(object):
             y.append(q)
             #print i
         return x,y
+    
+    def setpercent(self,percent):
+        self.percent_travel=percent
+        
+    def marginleft(self,current):
+        x=self.time_to_operate(current)
+        y=(1-self.percent_travel)*x
+        return y
+    
+        
 
 def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,feederct2,\
              tximp,inc_cbtime,inc_highsetpickup,inc_checkBox,\
@@ -224,10 +234,12 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             margin_store6.append(0)
             
         elif (feederone.tripped==1 and feedertwo.tripped==0):
-            incomer.percent_travel=(feederone.time3[i]+feederone.cb_open_time)/incomer.time3[i]
-            feedertwo.percent_travel=(feederone.time3[i]+feederone.cb_open_time)/feedertwo.time3[i]
-            feedertwo.percent_travel=min(feedertwo.percent_travel,1.0)
-            margin_store.append(incomer.percent_travel)
+            incomer.setpercent((feederone.time3[i]+feederone.cb_open_time)/incomer.time3[i])
+            feedertwo.setpercent((feederone.time3[i]+feederone.cb_open_time)/feedertwo.time3[i])
+            #feedertwo.setpercent(min(feedertwo.percent_travel,1.0))
+            x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)
+            y=feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)
+            margin_store.append((x-y))
             margin_store2.append(feedertwo.percent_travel)
             margin_store3.append(incomer.time_fdr1_open[i]*(1-incomer.percent_travel))
             margin_store4.append(feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel))

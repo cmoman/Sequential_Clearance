@@ -315,7 +315,7 @@ def main():
     
     splash.show()
 
-    splash.showMessage(QtCore.QString("bling"),QtCore.Qt.AlignCenter,QtGui.QColor("Red"))
+    splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Red"))
 
     dmw = DesignerMainWindow() # instantiate a window
     # show it

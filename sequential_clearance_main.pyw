@@ -267,6 +267,9 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         x2 , y2=q1
         self.mpl_12.canvas.ax.loglog(x2,y2,antialiased=True,alpha=.5,color='b', marker=',',label='Inc Time')
         self.mpl_12.canvas.ax.grid(True,which='both') #both adds the minor grid lines.
+        self.mpl_12.canvas.ax.set_ylabel('Time')
+        self.mpl_12.canvas.ax.set_xlabel('Current')
+        self.mpl_12.canvas.ax.legend(loc='best')
         self.mpl_12.canvas.draw()
         
         self.mpl_3.canvas.ax.clear()
@@ -276,6 +279,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_3.canvas.ax.loglog(x3,y3,antialiased=True,alpha=.5,color='g', marker=',', label='Fdr 1Time')
         self.mpl_3.canvas.ax.grid(True,which='both')
         self.mpl_3.canvas.ax.set_ylabel('Time')
+        self.mpl_3.canvas.ax.set_xlabel('Current')
         self.mpl_3.canvas.ax.legend(loc='best')
         self.mpl_3.canvas.draw()
         
@@ -286,6 +290,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_4.canvas.ax.loglog(x2,y2,antialiased=True,alpha=.5,color='r', marker=',', label='Fdr2 Time')
         self.mpl_4.canvas.ax.grid(True,which='both')
         self.mpl_4.canvas.ax.set_ylabel('Time')
+        self.mpl_4.canvas.ax.set_xlabel('Current')
         self.mpl_4.canvas.ax.legend(loc='best')   
         self.mpl_4.canvas.draw()
       

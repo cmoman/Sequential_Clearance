@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'sequential_clearance_mainwindow.ui'
 #
-# Created: Wed Mar 12 22:17:25 2014
+# Created: Fri Mar 14 22:52:20 2014
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -76,17 +76,6 @@ class Ui_MplMainWindow(object):
         self.mpldoubleSpinBox7.setProperty("value", 400.0)
         self.mpldoubleSpinBox7.setObjectName(_fromUtf8("mpldoubleSpinBox7"))
         self.gridLayout.addWidget(self.mpldoubleSpinBox7, 1, 2, 1, 1)
-        self.horizontalSlider = QtGui.QSlider(self.frame)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.horizontalSlider.sizePolicy().hasHeightForWidth())
-        self.horizontalSlider.setSizePolicy(sizePolicy)
-        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.horizontalSlider.setTickPosition(QtGui.QSlider.TicksBelow)
-        self.horizontalSlider.setTickInterval(5)
-        self.horizontalSlider.setObjectName(_fromUtf8("horizontalSlider"))
-        self.gridLayout.addWidget(self.horizontalSlider, 6, 4, 1, 1)
         self.mplfdr1_highset_spinBox = QtGui.QDoubleSpinBox(self.frame)
         self.mplfdr1_highset_spinBox.setMinimum(2.0)
         self.mplfdr1_highset_spinBox.setMaximum(30.0)
@@ -251,6 +240,17 @@ class Ui_MplMainWindow(object):
         self.curveComboBox_1.setObjectName(_fromUtf8("curveComboBox_1"))
         self.curveComboBox_1.addItem(_fromUtf8(""))
         self.gridLayout.addWidget(self.curveComboBox_1, 3, 1, 1, 1)
+        self.horizontalSlider = QtGui.QSlider(self.frame)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.horizontalSlider.sizePolicy().hasHeightForWidth())
+        self.horizontalSlider.setSizePolicy(sizePolicy)
+        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
+        self.horizontalSlider.setTickPosition(QtGui.QSlider.TicksBelow)
+        self.horizontalSlider.setTickInterval(5)
+        self.horizontalSlider.setObjectName(_fromUtf8("horizontalSlider"))
+        self.gridLayout.addWidget(self.horizontalSlider, 6, 4, 1, 1)
         self.gridLayout_8.addLayout(self.gridLayout, 0, 0, 1, 1)
         self.gridLayout_10.addWidget(self.frame, 1, 0, 1, 1)
         self.tabWidget = QtGui.QTabWidget(self.mplcentralwidget)
@@ -544,10 +544,9 @@ class Ui_MplMainWindow(object):
         self.label_4.setBuddy(self.mpldoubleSpinBox6)
 
         self.retranslateUi(MplMainWindow)
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(3)
         QtCore.QObject.connect(self.curveComboBox_2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox3, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
-        QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox4, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox2, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox5, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
@@ -568,6 +567,7 @@ class Ui_MplMainWindow(object):
         QtCore.QObject.connect(self.mplinc_checkBox, QtCore.SIGNAL(_fromUtf8("clicked()")), self.mplpushButton.click)
         QtCore.QObject.connect(self.curveComboBox_1, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.curveComboBox_3, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
+        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL(_fromUtf8("sliderReleased()")), self.mplpushButton.click)
         QtCore.QMetaObject.connectSlotsByName(MplMainWindow)
         MplMainWindow.setTabOrder(self.mpldoubleSpinBox6, self.mpldoubleSpinBox2)
         MplMainWindow.setTabOrder(self.mpldoubleSpinBox2, self.curveComboBox_1)
@@ -591,8 +591,7 @@ class Ui_MplMainWindow(object):
         MplMainWindow.setTabOrder(self.mplfdr2_checkBox, self.mplfdr2_cbtime_SpinBox)
         MplMainWindow.setTabOrder(self.mplfdr2_cbtime_SpinBox, self.mplspinBox)
         MplMainWindow.setTabOrder(self.mplspinBox, self.mpldoubleSpinBox)
-        MplMainWindow.setTabOrder(self.mpldoubleSpinBox, self.horizontalSlider)
-        MplMainWindow.setTabOrder(self.horizontalSlider, self.mplpushButton)
+        MplMainWindow.setTabOrder(self.mpldoubleSpinBox, self.mplpushButton)
         MplMainWindow.setTabOrder(self.mplpushButton, self.tabWidget)
         MplMainWindow.setTabOrder(self.tabWidget, self.webView)
 

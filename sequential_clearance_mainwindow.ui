@@ -142,25 +142,6 @@
            </property>
           </widget>
          </item>
-         <item row="6" column="4">
-          <widget class="QSlider" name="horizontalSlider">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="tickPosition">
-            <enum>QSlider::TicksBelow</enum>
-           </property>
-           <property name="tickInterval">
-            <number>5</number>
-           </property>
-          </widget>
-         </item>
          <item row="5" column="2">
           <widget class="QDoubleSpinBox" name="mplfdr1_highset_spinBox">
            <property name="toolTip">
@@ -583,6 +564,25 @@ p, li { white-space: pre-wrap; }
              <string>NI</string>
             </property>
            </item>
+          </widget>
+         </item>
+         <item row="6" column="4">
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::TicksBelow</enum>
+           </property>
+           <property name="tickInterval">
+            <number>5</number>
+           </property>
           </widget>
          </item>
         </layout>
@@ -1114,7 +1114,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>mplfdr2_cbtime_SpinBox</tabstop>
   <tabstop>mplspinBox</tabstop>
   <tabstop>mpldoubleSpinBox</tabstop>
-  <tabstop>horizontalSlider</tabstop>
   <tabstop>mplpushButton</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>webView</tabstop>
@@ -1149,22 +1148,6 @@ p, li { white-space: pre-wrap; }
     <hint type="sourcelabel">
      <x>336</x>
      <y>97</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>618</x>
-     <y>222</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>mpldoubleSpinBox</sender>
-   <signal>valueChanged(double)</signal>
-   <receiver>mplpushButton</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>618</x>
-     <y>172</y>
     </hint>
     <hint type="destinationlabel">
      <x>618</x>
@@ -1489,6 +1472,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>618</x>
      <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>mplpushButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>207</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>590</x>
+     <y>233</y>
     </hint>
    </hints>
   </connection>

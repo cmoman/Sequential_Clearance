@@ -78,14 +78,18 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         return True
         
     def initUI(self):
-        self.ratio   =self.mpldoubleSpinBox.value()
+        #self.ratio   =self.mpldoubleSpinBox.value()
+        
+        self.ratio=2.0
 
         
         # connect the signals with the slots
         QtCore.QObject.connect(self.mplpushButton, QtCore.SIGNAL("clicked()"), self.update_graph)
         QtCore.QObject.connect(self.mplactionOpen, QtCore.SIGNAL('triggered()'), self.select_file)
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
-        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue)    
+        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
+        QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChange(int)'), self.changeValue)
+        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('
         
         self.update_graph()        
         
@@ -93,9 +97,10 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
     def changeValue(self, value):
         
-        #self.mpldoubleSpinBox.value(value)
+        
         self.ratio = value/20.0
-        self.update_graph()
+        self.mpldoubleSpinBox.setValue(self.ratio)
+
 
       
     def select_file(self):
@@ -163,8 +168,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_1.canvas.ax.grid(True) 
         self.mpl_1.canvas.ax2.axhline(0.4,color='r')
         self.mpl_1.canvas.ax.set_ylabel('percentage')
-        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Incomer percentage')
-        self.mpl_1.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
+        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Margin')
+        #self.mpl_1.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
         self.mpl_1.canvas.ax.set_ylim(0.0,1.1)
         self.mpl_1.canvas.ax.legend(loc='best')
         self.mpl_1.canvas.draw()
@@ -177,11 +182,11 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_2.canvas.ax.grid(True)
         #self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Second trip')
         self.mpl_2.canvas.ax.set_ylabel('Incomer')
-        self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Incomer percentage')
+        self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Margin')
         self.mpl_2.canvas.ax2.grid(True) 
         #self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
         self.mpl_2.canvas.ax2.set_ylabel('Feeder')
-        self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
+        #self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
  
         self.mpl_2.canvas.ax.legend(loc=1)
         self.mpl_2.canvas.ax2.legend(loc=2)        

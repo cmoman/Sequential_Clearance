@@ -54,7 +54,7 @@ class CB_Relay(object):
         if (self.highset==True and self.I>(self.highsetpickup*self.ctratio)):
             self.time=0.02
         elif self.I>(self.pickup*self.ctratio):
-            self.time = self.TimeMultiplier * (d + (b / (math.pow(self.multiple,a) - c))) + e        
+            self.time = self.TimeMultiplier * (d + (b / (math.pow(self.multiple,a) - c))) + e
         else:
             self.time=50
             
@@ -235,7 +235,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
         elif feedertwo.time3[i]<feederone.time3[i]:
             case=6
             
-        print case
+        #print case
             
         if incomer.tripped==1:
             margin_store.append(0)
@@ -255,7 +255,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             margin_store2.append(incomer.percent_travel*100)
             margin_store3.append(2)
             
-            #margin_store4.append(feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel))
+            margin_store4.append(incomer.time3[i]-feederone.time3[i])
             #margin_store5.append((incomer.time_fdr1_open[i]*(1-incomer.percent_travel))-(feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)))
             #margin_store6.append(incomer.time3[i]-feederone.time3[i])
             
@@ -269,22 +269,28 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             margin_store2.append(incomer.percent_travel*100)                
             margin_store3.append(3)
             
-            #margin_store3.append(incomer.time_fdr2_open[i]*(1-incomer.percent_travel))
+            margin_store4.append(incomer.time3[i]-feedertwo.time3[i])
+            #print(incomer.time3[i]-feedertwo.time3[i])
             #margin_store4.append(feederone.time_fdr2_open[i]*(1-feederone.percent_travel))
             #margin_store5.append((incomer.time_fdr2_open[i]*(1-incomer.percent_travel))-(feederone.time_fdr2_open[i]*(1-feederone.percent_travel)))
             #margin_store6.append(incomer.time3[i]-feedertwo.time3[i])
             
-        elif (case==4):
-            incomer.percent_travel=max((feederone.time3[i]+(feederone.cb_open_time)),(feedertwo.time3[i]+(feedertwo.cb_open_time))) /incomer.time3[i]
+        elif (case==4): #assuming feeder one opens slightly sooner
+            incomer.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/incomer.time3[i])
+            feederone.setpercent(1)
 
-            
             x=incomer.time3[i]
-            y=max(feederone.time3[i],feedertwo.time3[i])
+            y=feederone.time3[i]
+            
+            #x=incomer.time3[i]
+            #y=max(feederone.time3[i],feedertwo.time3[i])
+            #y=max(feederone.time_fdr2_open[i],feedertwo.time_fdr1_open[i])
             margin_store.append((x-y))   
             margin_store2.append(incomer.percent_travel*100)
             margin_store3.append(4)
             
-            #margin_store4.append(0)
+            margin_store4.append(incomer.time3[i]-feedertwo.time3[i])
+            #print(incomer.time3[i]-feedertwo.time3[i])
             #margin_store5.append(incomer.time3[i]*(1-incomer.percent_travel))
             #incomer.percent_travel=min((feederone.time3[i]),(feedertwo.time3[i])) /incomer.time3[i] #Test
             #margin_store6.append(incomer.time3[i]*(1-incomer.percent_travel))
@@ -300,21 +306,27 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             
             #incomer.setpercent(incomer.percent_travel+time)
             
-            x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)
+            x=incomer.time_fdr1_open[i]*(1-(incomer.percent_travel))
             y=feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)
-            margin_store.append((x-y-time))
+            margin_store.append((x-y))
             margin_store2.append(incomer.percent_travel*100)            
             margin_store3.append(5)
+            margin_store4.append(incomer.time3[i]-feederone.time3[i])
             
         elif (case==6): #feeder 2 opens first
             incomer.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/incomer.time3[i])
             feederone.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/feederone.time3[i])
             
-            x=incomer.time_fdr2_open[i]*(1-incomer.percent_travel)
+            #Stage 2 incomer continues to time while feeder 1 now opens
+            time = (feedertwo.time3[i]+feedertwo.cb_open_time)-(feederone.time3[i]+feederone.cb_open_time)
+            incper=time/incomer.time_fdr2_open[i]            
+            
+            x=incomer.time_fdr2_open[i]*(1-(incomer.percent_travel))
             y=feederone.time_fdr2_open[i]*(1-feederone.percent_travel)
             margin_store.append((x-y))            
             margin_store2.append(incomer.percent_travel*100)                
             margin_store3.append(5)
+            margin_store4.append(incomer.time3[i]-feedertwo.time3[i])
             
             
         else:

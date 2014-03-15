@@ -89,7 +89,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChange(int)'), self.changeValue)
-        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('
+        #QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('
         
         self.update_graph()        
         
@@ -114,6 +114,11 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
 
     def parse_file(self, filename): # [CO] this is where we would put the sequential calculation
         """Function to parse a text file to extract letters frequencies"""
+        
+    def save_file(self):
+        pass
+        
+    
         
 
         
@@ -161,35 +166,41 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         #plot the graph
         self.mpl_1.canvas.ax.clear()
-        self.mpl_1.canvas.ax2.clear()
         self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')
+        self.mpl_1.canvas.ax.set_xlabel('m')  
         self.mpl_1.canvas.ax.set_ylabel('Margin in seconds')
-        self.mpl_1.canvas.ax.set_xlabel('m')           
+        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Inc margin')
         self.mpl_1.canvas.ax.grid(True) 
-        self.mpl_1.canvas.ax2.axhline(0.4,color='r')
-        self.mpl_1.canvas.ax.set_ylabel('percentage')
-        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Margin')
-        #self.mpl_1.canvas.ax.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
-        self.mpl_1.canvas.ax.set_ylim(0.0,1.1)
+        self.mpl_1.canvas.ax.axhline(0.4,color='r')
         self.mpl_1.canvas.ax.legend(loc='best')
+        
+        self.mpl_1.canvas.ax2.clear()
+        self.mpl_1.canvas.ax2.set_ylabel('Percentage travel')
+        self.mpl_1.canvas.ax2.grid(True) 
+        self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
+        self.mpl_1.canvas.ax2.set_ylim(0.0,100)
+        self.mpl_1.canvas.ax2.legend(loc='center right')
+        
+        
         self.mpl_1.canvas.draw()
         
         #plot the tab 2 graph
         self.mpl_2.canvas.ax.clear()
-        self.mpl_2.canvas.ax2.clear()
+        
         self.mpl_2.canvas.ax.set_title('Margin between incomer and feeders to trip.')
         self.mpl_2.canvas.ax.set_ylabel('Margin in seconds')
+        self.mpl_2.canvas.ax.set_xlabel('m')   
         self.mpl_2.canvas.ax.grid(True)
-        #self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Second trip')
-        self.mpl_2.canvas.ax.set_ylabel('Incomer')
-        self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Margin')
+        self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Inc margin')
+        self.mpl_2.canvas.ax.legend(loc='best')
+        
+        self.mpl_2.canvas.ax2.clear()
+        self.mpl_2.canvas.ax2.set_ylabel('Percentage travel')
         self.mpl_2.canvas.ax2.grid(True) 
-        #self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='First trip')
-        self.mpl_2.canvas.ax2.set_ylabel('Feeder')
-        #self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Feeder percentage')
- 
-        self.mpl_2.canvas.ax.legend(loc=1)
-        self.mpl_2.canvas.ax2.legend(loc=2)        
+        self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
+        self.mpl_2.canvas.ax2.set_ylim(0.0,100)
+        self.mpl_2.canvas.ax2.legend(loc='center right')            
+            
         self.mpl_2.canvas.draw()
         
      
@@ -320,7 +331,7 @@ def main():
     
     splash.show()
 
-    splash.showMessage(QtCore.QString("bling"),QtCore.Qt.AlignCenter,QtGui.QColor("Red"))
+    splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Red"))
 
     dmw = DesignerMainWindow() # instantiate a window
     # show it

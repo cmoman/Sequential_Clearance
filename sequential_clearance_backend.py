@@ -237,7 +237,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             
         if incomer.tripped==1:
             margin_store.append(0)
-            margin_store2.append((incomer.time3[i]+incomer.cb_open_time)/feederone.time3[i]) #Might need to develop this a bit
+            margin_store2.append(100)
             margin_store3.append(1)
             margin_store4.append(0)
             margin_store5.append(0)
@@ -250,8 +250,8 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)
             y=feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)
             margin_store.append((x-y))
+            margin_store2.append(incomer.percent_travel*100)
             
-            #margin_store2.append(feedertwo.percent_travel)
             #margin_store3.append(incomer.time_fdr1_open[i]*(1-incomer.percent_travel))
             #margin_store4.append(feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel))
             #margin_store5.append((incomer.time_fdr1_open[i]*(1-incomer.percent_travel))-(feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)))
@@ -264,9 +264,8 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             x=incomer.time_fdr2_open[i]*(1-incomer.percent_travel)
             y=feederone.time_fdr2_open[i]*(1-feederone.percent_travel)
             margin_store.append((x-y))            
-            
-            #feederone.percent_travel=min(feederone.percent_travel,1.0)
-            #margin_store.append(incomer.percent_travel)
+            margin_store2.append(incomer.percent_travel*100)
+                                 
             #margin_store2.append(feederone.percent_travel)
             #margin_store3.append(incomer.time_fdr2_open[i]*(1-incomer.percent_travel))
             #margin_store4.append(feederone.time_fdr2_open[i]*(1-feederone.percent_travel))
@@ -275,17 +274,18 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             
         elif (feedertwo.tripped==1 and feederone.tripped==1):
             incomer.percent_travel=max((feederone.time3[i]+(feederone.cb_open_time)),(feedertwo.time3[i]+(feedertwo.cb_open_time))) /incomer.time3[i]
-            incomer.percent_travel=min((feederone.time3[i]),(feedertwo.time3[i])) /incomer.time3[i]
+            #incomer.percent_travel=min((feederone.time3[i]),(feedertwo.time3[i])) /incomer.time3[i]
+            
+            #when both trip simulatenously, the incomer percentage should be divided by half the incomer current.
             
             x=incomer.time3[i]
             y=max(feederone.time3[i],feedertwo.time3[i])
-            margin_store.append((x-y)+feederone.cb_open_time)
+            margin_store.append((x-y))   
+            margin_store2.append(incomer.percent_travel*100)
             
-            #margin_store2.append(1)
             #margin_store3.append(incomer.time3[i]*(1-incomer.percent_travel))
             #margin_store4.append(0)
             #margin_store5.append(incomer.time3[i]*(1-incomer.percent_travel))
-            
             #incomer.percent_travel=min((feederone.time3[i]),(feedertwo.time3[i])) /incomer.time3[i] #Test
             #margin_store6.append(incomer.time3[i]*(1-incomer.percent_travel))
             
@@ -293,7 +293,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
         else:
             print feederone.tripped,feedertwo.tripped,incomer.tripped
             margin_store.append(20)
-            #margin_store2.append(20)
+            margin_store2.append(100)
             #margin_store3.append(20)
             #margin_store4.append(20)
             #margin_store5.append(20)

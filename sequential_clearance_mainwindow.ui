@@ -614,7 +614,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'sequential_clearance_mainwindow.ui'
 #
-# Created: Fri Mar 14 22:52:20 2014
+# Created: Sat Mar 15 22:00:24 2014
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -532,8 +532,15 @@ class Ui_MplMainWindow(object):
         self.mplactionQuit.setObjectName(_fromUtf8("mplactionQuit"))
         self.mplactionOpen = QtGui.QAction(MplMainWindow)
         self.mplactionOpen.setObjectName(_fromUtf8("mplactionOpen"))
-        self.menuFile.addAction(self.mplactionQuit)
+        self.actionSave = QtGui.QAction(MplMainWindow)
+        self.actionSave.setObjectName(_fromUtf8("actionSave"))
+        self.actionSaveAs = QtGui.QAction(MplMainWindow)
+        self.actionSaveAs.setObjectName(_fromUtf8("actionSaveAs"))
         self.menuFile.addAction(self.mplactionOpen)
+        self.menuFile.addAction(self.actionSave)
+        self.menuFile.addAction(self.actionSaveAs)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.mplactionQuit)
         self.menubar.addAction(self.menuFile.menuAction())
         self.label_10.setBuddy(self.mplinc_cbtime_SpinBox)
         self.label_11.setBuddy(self.curveComboBox_1)
@@ -665,7 +672,9 @@ class Ui_MplMainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QtGui.QApplication.translate("MplMainWindow", "Tesla Wiki", None, QtGui.QApplication.UnicodeUTF8))
         self.menuFile.setTitle(QtGui.QApplication.translate("MplMainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
         self.mplactionQuit.setText(QtGui.QApplication.translate("MplMainWindow", "Quit", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplactionOpen.setText(QtGui.QApplication.translate("MplMainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
+        self.mplactionOpen.setText(QtGui.QApplication.translate("MplMainWindow", "Open", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSave.setText(QtGui.QApplication.translate("MplMainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSaveAs.setText(QtGui.QApplication.translate("MplMainWindow", "SaveAs", None, QtGui.QApplication.UnicodeUTF8))
 
 from PyQt4 import QtWebKit
 from mplwidget import MplWidget

@@ -1,2 +1,13 @@
 /.project
 *.pyc
+/.directory
+/Sequential_clearance.wpr
+/Sequential_clearance.wpu
+/Untitled0.ipynb
+/Untitled1.ipynb
+/Untitled2.ipynb
+/sequential_clearance.wpr
+/sequential_clearance.wpu
+*.qrc
+*.com_PDF_word_v_framemaker_comparison_guide_ue.pdf
+xkcd.py

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+#encoding utf-8
+#12
 # used to parse files more easily
 from __future__ import with_statement
 
@@ -19,11 +20,14 @@ from PyQt4 import QtCore
 # Python Qt4 bindings for GUI objects
 from PyQt4 import QtGui
 
-#from PyQt4.Qwt5 import *
-#from PyQt4.Qwt5.qplt import *
+import os
 
-#from DataDemo import DataPlot
+if os.name == 'nt': # Windows
 
+    import ctypes
+    myappid = 'tesla.sequential_clearance.0.9' # arbitrary string
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+    
 # import the MainWindow widget from the converted .ui files
 from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
@@ -316,12 +320,22 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_4.canvas.draw()
         
         self.mpl_7.canvas.ax.clear()
-        self.mpl_7.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='r', marker=',', label='Fdr2 Time')
+        #self.mpl_7.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='r', marker='.', label='Case')
+        self.mpl_7.canvas.ax.bar(left=m_store, height=margin_store3,width=0.01)
         self.mpl_7.canvas.ax.grid(True,which='both')
-        self.mpl_7.canvas.ax.set_ylabel('Time')
-        self.mpl_7.canvas.ax.set_xlabel('Current')
+        self.mpl_7.canvas.ax.set_ylabel('Case')
+        self.mpl_7.canvas.ax.set_xlabel('m')
         self.mpl_7.canvas.ax.legend(loc='best')   
         self.mpl_7.canvas.draw()
+        
+        self.mpl_9.canvas.ax.clear()
+        self.mpl_9.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='r', marker=',', label='Stage1')
+        self.mpl_9.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='b', marker=',', label='Stage1+2')
+        self.mpl_9.canvas.ax.grid(True,which='both')
+        self.mpl_9.canvas.ax.set_ylabel('Time')
+        self.mpl_9.canvas.ax.set_xlabel('m')
+        self.mpl_9.canvas.ax.legend(loc='best')   
+        self.mpl_9.canvas.draw()        
       
         
 def fakeIt():

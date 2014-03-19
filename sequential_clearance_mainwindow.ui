@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Sequential Clearance 11kV System</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/Logo_Export_no_text.png</normaloff>images/Logo_Export_no_text.png</iconset>
+  </property>
   <widget class="QWidget" name="mplcentralwidget">
    <property name="sizePolicy">
     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -605,7 +609,7 @@ p, li { white-space: pre-wrap; }
        </size>
       </property>
       <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Change the curve shapes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Matplotlib&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
@@ -614,7 +618,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -1034,7 +1038,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="url">
            <url>
-            <string>http://wiki.tesla.local/</string>
+            <string>http://wiki.tesla.local/index.php/Main_Page</string>
            </url>
           </property>
           <property name="renderHints">

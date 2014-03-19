@@ -234,7 +234,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
         elif abs(feederone.time3[i]-feedertwo.time3[i])==0:
             case=4 #simple margin
         elif feederone.time3[i]<feedertwo.time3[i]:
-            case=5 #feeder 1 starts to trip first
+            case=5 #feeder 1 starts to trip first but then its race to who open first
         elif feedertwo.time3[i]<feederone.time3[i]:
             case=6 # feeder 2 starts to trip first
             
@@ -255,11 +255,15 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             stage1=feederone.time3[i]+feederone.cb_open_time
             stage2=feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)+feedertwo.cb_open_time
             
-            x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)
+            w=incomer.time3[i]*((incomer.percent_travel))
+            x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)+w
             y=feedertwo.time_fdr1_open[i]*(1-feedertwo.percent_travel)
+            
+            y=stage1+stage2
+            
             margin_store.append((x-y))
             margin_store2.append(incomer.percent_travel*100)
-            margin_store3.append(feedertwo.percent_travel)
+            margin_store3.append(2)
             
             margin_store4.append(incomer.time3[i]-feederone.time3[i])
             margin_store5.append(stage1)
@@ -270,15 +274,19 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             incomer.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/incomer.time3[i])
             feederone.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/feederone.time3[i])
             
-            x=incomer.time_fdr2_open[i]*(1-incomer.percent_travel)
-            y=feederone.time_fdr2_open[i]*(1-feederone.percent_travel)
+
             
             stage1=feedertwo.time3[i]+feedertwo.cb_open_time
             stage2=feederone.time_fdr2_open[i]*(1-feederone.percent_travel)+feederone.cb_open_time
             
+            w=incomer.time3[i]*((incomer.percent_travel))
+            x=incomer.time_fdr2_open[i]*(1-incomer.percent_travel)+w
+            y=feederone.time_fdr2_open[i]*(1-feederone.percent_travel)            
+            y=stage1+stage2
+            
             margin_store.append((x-y))            
             margin_store2.append(incomer.percent_travel*100)                
-            margin_store3.append(feedertwo.percent_travel)
+            margin_store3.append(3)
             
             margin_store4.append(incomer.time3[i]-feedertwo.time3[i])
             margin_store5.append(stage1)
@@ -289,17 +297,19 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             incomer.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/incomer.time3[i])
             feederone.setpercent(1)
 
-            x=incomer.time3[i]
-            y=feederone.time3[i]
-            
-            stage1=feedertwo.time3[i]+feedertwo.cb_open_time
+            stage1= min(feederone.time3[i]+feederone.cb_open_time,feedertwo.time3[i]+feedertwo.cb_open_time)
             stage2=abs((feederone.time3[i]+feederone.cb_open_time)-(feedertwo.time3[i]+feedertwo.cb_open_time))
             
             x=incomer.time3[i]
             y=max(feederone.time_fdr2_open[i],feedertwo.time_fdr1_open[i])
+            
+            w=incomer.time3[i]*((incomer.percent_travel))
+            x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)+w
+            y=stage1+stage2 # total time to feeder tripping.            
+            
             margin_store.append((x-y))   
             margin_store2.append(incomer.percent_travel*100)
-            margin_store3.append(feedertwo.percent_travel)
+            margin_store3.append(4)
             
             margin_store4.append(incomer.time3[i]-feedertwo.time3[i])
             margin_store5.append(stage1)
@@ -307,41 +317,44 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             #margin_store6.append((stage2))  
             
         elif (case==5): #feeder 1 opens first
-            #Stage 1 feeder one opens first
+            #Stage 1 feeder one asserts to open first but if breaker open time is slow, feeder two may open first.
             incomer.setpercent((feederone.time3[i]+feederone.cb_open_time)/incomer.time3[i])
             feedertwo.setpercent((feederone.time3[i]+feederone.cb_open_time)/feedertwo.time3[i])
             
             #Stage 2 incomer continues to time while feeder 2 now opens
             
-            stage1=feederone.time3[i]+feederone.cb_open_time
+            stage1= min(feederone.time3[i]+feederone.cb_open_time,feedertwo.time3[i]+feedertwo.cb_open_time)
             stage2 = abs((feederone.time3[i]+feederone.cb_open_time)-(feedertwo.time3[i]+feedertwo.cb_open_time))
-                        
             
             
-            x=incomer.time3[i]*(1-(incomer.percent_travel))
-            y=stage2
+            w=incomer.time3[i]*((incomer.percent_travel))
+            x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)+w
+            y=stage1+stage2
+            
             margin_store.append((x-y))
             margin_store2.append(incomer.percent_travel*100)            
-            margin_store3.append(feedertwo.percent_travel)
+            margin_store3.append(5)
             margin_store4.append(incomer.time3[i]-feederone.time3[i])
             margin_store5.append(stage1)
             margin_store6.append((stage1+stage2))      
             #margin_store6.append((stage2))  
             
         elif (case==6): #feeder 2 opens first
+            #feeder two asserts to open first but if breaker open time is slow, feeder one may open first.
             incomer.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/incomer.time3[i])
             feederone.setpercent((feedertwo.time3[i]+feedertwo.cb_open_time)/feederone.time3[i])
             
             #Stage 2 incomer continues to time while feeder 1 now opens
-            stage1=feedertwo.time3[i]+feedertwo.cb_open_time
+            stage1= min(feederone.time3[i]+feederone.cb_open_time,feedertwo.time3[i]+feedertwo.cb_open_time)
             stage2 = abs((feederone.time3[i]+feederone.cb_open_time)-(feedertwo.time3[i]+feedertwo.cb_open_time))
-                     
+
+            w=incomer.time3[i]*((incomer.percent_travel))
+            x=incomer.time_fdr2_open[i]*(1-incomer.percent_travel)+w
+            y=stage1+stage2
             
-            x=incomer.time3[i]*(1-(incomer.percent_travel))
-            y=stage2
             margin_store.append((x-y))            
             margin_store2.append(incomer.percent_travel*100)                
-            margin_store3.append(feedertwo.percent_travel)
+            margin_store3.append(6)
             margin_store4.append(incomer.time3[i]-feedertwo.time3[i])
             margin_store5.append(stage1)
             margin_store6.append((stage1+stage2))      

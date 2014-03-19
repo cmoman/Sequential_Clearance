@@ -316,12 +316,21 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_4.canvas.draw()
         
         self.mpl_7.canvas.ax.clear()
-        self.mpl_7.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='r', marker=',', label='Fdr2 Time')
+        self.mpl_7.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='r', marker='.', label='Fdr2 Time')
         self.mpl_7.canvas.ax.grid(True,which='both')
         self.mpl_7.canvas.ax.set_ylabel('Time')
         self.mpl_7.canvas.ax.set_xlabel('Current')
         self.mpl_7.canvas.ax.legend(loc='best')   
         self.mpl_7.canvas.draw()
+        
+        self.mpl_9.canvas.ax.clear()
+        self.mpl_9.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='r', marker=',', label='X')
+        self.mpl_9.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='b', marker=',', label='Y')
+        self.mpl_9.canvas.ax.grid(True,which='both')
+        self.mpl_9.canvas.ax.set_ylabel('Time')
+        self.mpl_9.canvas.ax.set_xlabel('Current')
+        self.mpl_9.canvas.ax.legend(loc='best')   
+        self.mpl_9.canvas.draw()        
       
         
 def fakeIt():

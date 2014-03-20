@@ -90,18 +90,26 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         self.ratio=2.0
         self.lineangle=35
+        
+        self.doubleSpinBox.setValue(self.lineangle) 
 
         
         # connect the signals with the slots
         QtCore.QObject.connect(self.mplpushButton, QtCore.SIGNAL("clicked()"), self.update_graph)
         QtCore.QObject.connect(self.mplactionOpen, QtCore.SIGNAL('triggered()'), self.select_file)
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
-        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
-        QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChange(int)'), self.changeValue)
-        QtCore.QObject.connect(self.dial, QtCore.SIGNAL('valueChanged(int)'), self.changeValue2)
-        #QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('
         
-        self.doubleSpinBox.setValue(self.lineangle) 
+        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
+        QtCore.QObject.connect(self.dial, QtCore.SIGNAL('valueChanged(int)'), self.changeValue2)
+        
+        QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
+        QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
+ 
+        #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.mplpushButton, QtCore.SLOT("click()"))
+        #QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.mplpushButton, QtCore.SLOT("click()"))  
+        
+        #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('editingFinished()'), self.update_graph)
+        #QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('editingFinished()'), self.update_graph)              
         
         self.update_graph()        
         
@@ -117,7 +125,13 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         
         self.lineangle= value
-        self.doubleSpinBox.setValue(self.lineangle)    
+        self.doubleSpinBox.setValue(self.lineangle)   
+        
+    def changeValue3(self, value):
+        
+        print value
+        self.ratio=value
+        self.mpldoubleSpinBox.setValue(value) 
 
 
       
@@ -187,8 +201,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')
         self.mpl_1.canvas.ax.set_xlabel('m')  
         self.mpl_1.canvas.ax.set_ylabel('Margin in seconds')
-        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker='.',label='Inc margin second trip')
-        self.mpl_1.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='b', marker='.',label='Inc margin first trip')
+        self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Inc margin second trip')
+        self.mpl_1.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='b', marker=',',label='Inc margin first trip')
         self.mpl_1.canvas.ax.grid(True) 
         self.mpl_1.canvas.ax.axhline(0.4,color='r')
         self.mpl_1.canvas.ax.legend(loc='best')

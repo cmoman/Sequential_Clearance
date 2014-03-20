@@ -89,6 +89,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         #self.ratio   =self.mpldoubleSpinBox.value()
         
         self.ratio=2.0
+        self.lineangle=35
 
         
         # connect the signals with the slots
@@ -97,7 +98,10 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChange(int)'), self.changeValue)
+        QtCore.QObject.connect(self.dial, QtCore.SIGNAL('valueChanged(int)'), self.changeValue2)
         #QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('
+        
+        self.doubleSpinBox.setValue(self.lineangle) 
         
         self.update_graph()        
         
@@ -108,6 +112,12 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         self.ratio = value/20.0
         self.mpldoubleSpinBox.setValue(self.ratio)
+        
+    def changeValue2(self, value):
+        
+        
+        self.lineangle= value
+        self.doubleSpinBox.setValue(self.lineangle)    
 
 
       
@@ -169,7 +179,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
                                                   self.inc_cbtime,self.inc_highset,self.inc_checkBox,
                                                   self.fdr1_cbtime,self.fdr1_highset,self.fdr1_checkBox,\
                                                   self.fdr2_cbtime,self.fdr2_highset,self.fdr2_checkBox,\
-                                                  self.inc_curve,self.fdr1_curve,self.fdr2_curve)
+                                                  self.inc_curve,self.fdr1_curve,self.fdr2_curve,self.lineangle)
         
         
         #plot the graph

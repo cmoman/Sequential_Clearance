@@ -99,7 +99,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
              tximp,inc_cbtime,inc_highsetpickup,inc_checkBox,\
              fdr1_cbtime,fdr1_highsetpickup,fdr1_checkBox,\
              fdr2_cbtime,fdr2_highsetpickup,fdr2_checkBox,
-             inc_curve,fdr1_curve,fdr2_curve):
+             inc_curve,fdr1_curve,fdr2_curve,lineangle):
 
     resolution=0.01
     Tx_percentage_impedance=tximp
@@ -113,7 +113,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
 
     Z_loop_impedance=abs(Z_transformer)*ratio2
 
-    Z_loop_impedance_angle=41
+    Z_loop_impedance_angle=lineangle
     Z_loop=complex(cm.rect(Z_loop_impedance,math.radians(Z_loop_impedance_angle)))
 
 

@@ -100,6 +100,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="value">
+            <number>40</number>
+           </property>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -590,7 +593,24 @@ p, li { white-space: pre-wrap; }
           </widget>
          </item>
          <item row="2" column="4">
-          <widget class="QDial" name="dial"/>
+          <widget class="QDial" name="dial">
+           <property name="minimum">
+            <number>30</number>
+           </property>
+           <property name="maximum">
+            <number>90</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox">
+           <property name="suffix">
+            <string>deg</string>
+           </property>
+           <property name="value">
+            <double>35.000000000000000</double>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -621,7 +641,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -1041,7 +1061,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="url">
            <url>
-            <string>http://wiki.tesla.local/index.php/Main_Page</string>
+            <string>http://wiki.tesla.local/index.php/Sequential_Clearance</string>
            </url>
           </property>
           <property name="renderHints">
@@ -1508,6 +1528,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>590</x>
      <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>mplpushButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>577</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>578</x>
+     <y>226</y>
     </hint>
    </hints>
   </connection>

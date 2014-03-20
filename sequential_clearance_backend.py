@@ -261,7 +261,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             
             y=stage1+stage2
             
-            margin_store.append((x-y))
+            margin_store.append((x-y+0.06))
             margin_store2.append(incomer.percent_travel*100)
             margin_store3.append(2)
             
@@ -284,7 +284,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             y=feederone.time_fdr2_open[i]*(1-feederone.percent_travel)            
             y=stage1+stage2
             
-            margin_store.append((x-y))            
+            margin_store.append((x-y+0.06))            
             margin_store2.append(incomer.percent_travel*100)                
             margin_store3.append(3)
             
@@ -307,7 +307,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)+w
             y=stage1+stage2 # total time to feeder tripping.            
             
-            margin_store.append((x-y))   
+            margin_store.append((x-y+0.06))   
             margin_store2.append(incomer.percent_travel*100)
             margin_store3.append(4)
             
@@ -331,7 +331,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             x=incomer.time_fdr1_open[i]*(1-incomer.percent_travel)+w
             y=stage1+stage2
             
-            margin_store.append((x-y))
+            margin_store.append((x-y+0.06))
             margin_store2.append(incomer.percent_travel*100)            
             margin_store3.append(5)
             margin_store4.append(incomer.time3[i]-feederone.time3[i])
@@ -352,7 +352,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             x=incomer.time_fdr2_open[i]*(1-incomer.percent_travel)+w
             y=stage1+stage2
             
-            margin_store.append((x-y))            
+            margin_store.append((x-y+0.06))            
             margin_store2.append(incomer.percent_travel*100)                
             margin_store3.append(6)
             margin_store4.append(incomer.time3[i]-feedertwo.time3[i])

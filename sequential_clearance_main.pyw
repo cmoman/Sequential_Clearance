@@ -129,7 +129,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
     def changeValue3(self, value):
         
-        print value
+        #print value
         self.ratio=value
         self.mpldoubleSpinBox.setValue(value) 
 
@@ -196,28 +196,29 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
                                                   self.inc_curve,self.fdr1_curve,self.fdr2_curve,self.lineangle)
         
         
-        #plot the graph
+        #plot the graph tab 2
         self.mpl_1.canvas.ax.clear()
         self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')
         self.mpl_1.canvas.ax.set_xlabel('m')  
         self.mpl_1.canvas.ax.set_ylabel('Margin in seconds')
+        self.mpl_1.canvas.ax.set_ylim(0,1.2)
         self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Inc margin second trip')
         self.mpl_1.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='b', marker=',',label='Inc margin first trip')
         self.mpl_1.canvas.ax.grid(True) 
         self.mpl_1.canvas.ax.axhline(0.4,color='r')
         self.mpl_1.canvas.ax.legend(loc='best')
         
-        self.mpl_1.canvas.ax2.clear()
-        self.mpl_1.canvas.ax2.set_ylabel('Percentage travel')
-        self.mpl_1.canvas.ax2.grid(True) 
-        self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
-        self.mpl_1.canvas.ax2.set_ylim(0.0,100)
-        self.mpl_1.canvas.ax2.legend(loc='center right')
+        #self.mpl_1.canvas.ax2.clear()
+        #self.mpl_1.canvas.ax2.set_ylabel('Percentage travel')
+        #self.mpl_1.canvas.ax2.grid(True) 
+        #self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
+        #self.mpl_1.canvas.ax2.set_ylim(0.0,100)
+        #self.mpl_1.canvas.ax2.legend(loc='center right')
         
         
         self.mpl_1.canvas.draw()
         
-        #plot the tab 2 graph
+        #plot the tab 3 graph
         self.mpl_2.canvas.ax.clear()
         
         self.mpl_2.canvas.ax.set_title('Margin between incomer and feeders to trip.')
@@ -225,19 +226,21 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_2.canvas.ax.set_xlabel('m')   
         self.mpl_2.canvas.ax.grid(True)
         self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Inc margin')
+        self.mpl_2.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='r', marker=',', label='Stage1')
+        self.mpl_2.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='b', marker=',', label='Stage1+2')        
         self.mpl_2.canvas.ax.legend(loc='best')
         
         self.mpl_2.canvas.ax2.clear()
         self.mpl_2.canvas.ax2.set_ylabel('Percentage travel')
         self.mpl_2.canvas.ax2.grid(True) 
-        self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
+        self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent 1st trip')
         self.mpl_2.canvas.ax2.set_ylim(0.0,100)
-        self.mpl_2.canvas.ax2.legend(loc='center right')            
+        self.mpl_2.canvas.ax2.legend(loc='best')            
             
         self.mpl_2.canvas.draw()
         
      
-        
+        #tab 4
         self.mpl_5.canvas.ax.clear()
         self.mpl_5.canvas.ax2.clear()
         self.mpl_5.canvas.ax.set_title('Incomer times and current')
@@ -257,7 +260,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_5.canvas.ax2.legend(loc=1)
         self.mpl_5.canvas.draw()
         
-
+        #tab 5
         self.mpl_6.canvas.ax.clear()
         self.mpl_6.canvas.ax2.clear()
         self.mpl_6.canvas.ax.set_title('Feeder One times and current')
@@ -311,6 +314,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_11.canvas.ax2.legend(loc=1)
         self.mpl_11.canvas.draw()
         
+        #tab 7
         self.mpl_12.canvas.ax.clear()
         self.mpl_12.canvas.ax.set_title("Incomer OC(IT) plot")
         x2 , y2=q1
@@ -343,6 +347,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_4.canvas.ax.legend(loc='best')   
         self.mpl_4.canvas.draw()
         
+        #tab 6
         self.mpl_7.canvas.ax.clear()
         #self.mpl_7.canvas.ax.plot(m_store,margin_store3,antialiased=True,alpha=.5,color='r', marker='.', label='Case')
         self.mpl_7.canvas.ax.bar(left=m_store, height=margin_store3,width=0.01)
@@ -374,7 +379,8 @@ def main():
     
     image = QtGui.QImage(400,400,QtGui.QImage.Format_RGB32)
     #image.setColor(2,2)
-    pixmap3=QtGui.QPixmap("images/blank.png")
+    #pixmap3=QtGui.QPixmap("images/blank.png")
+    pixmap3=QtGui.QPixmap("images/title.svg")
     pixmap2=QtGui.QPixmap("images/schematic_from_model_view.svg")
     pixmap=pixmap3.scaled(400,400,1)
     
@@ -382,7 +388,7 @@ def main():
     
     splash.show()
 
-    splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Red"))
+    splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
 
     dmw = DesignerMainWindow() # instantiate a window
     # show it

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/title.svg</file>
     <file>images/Logo_Export_no_text.png</file>
     <file alias="splash">images/schematic.png</file>
     <file alias="splash">images/blank.png</file>

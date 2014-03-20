@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'sequential_clearance_mainwindow.ui'
 #
-# Created: Sat Mar 15 22:00:24 2014
-#      by: PyQt4 UI code generator 4.9.1
+# Created: Thu Mar 20 11:19:05 2014
+#      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,16 @@ from PyQt4 import QtCore, QtGui
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
-    _fromUtf8 = lambda s: s
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_MplMainWindow(object):
     def setupUi(self, MplMainWindow):
@@ -23,6 +32,9 @@ class Ui_MplMainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MplMainWindow.sizePolicy().hasHeightForWidth())
         MplMainWindow.setSizePolicy(sizePolicy)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("images/Logo_Export_no_text.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MplMainWindow.setWindowIcon(icon)
         self.mplcentralwidget = QtGui.QWidget(MplMainWindow)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -515,7 +527,7 @@ class Ui_MplMainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.webView.sizePolicy().hasHeightForWidth())
         self.webView.setSizePolicy(sizePolicy)
-        self.webView.setUrl(QtCore.QUrl(_fromUtf8("http://wiki.tesla.local/")))
+        self.webView.setUrl(QtCore.QUrl(_fromUtf8("http://wiki.tesla.local/index.php/Main_Page")))
         self.webView.setRenderHints(QtGui.QPainter.Antialiasing|QtGui.QPainter.SmoothPixmapTransform|QtGui.QPainter.TextAntialiasing)
         self.webView.setObjectName(_fromUtf8("webView"))
         self.gridLayout_6.addWidget(self.webView, 0, 0, 1, 1)
@@ -551,7 +563,7 @@ class Ui_MplMainWindow(object):
         self.label_4.setBuddy(self.mpldoubleSpinBox6)
 
         self.retranslateUi(MplMainWindow)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QObject.connect(self.curveComboBox_2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox3, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox4, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
@@ -603,80 +615,90 @@ class Ui_MplMainWindow(object):
         MplMainWindow.setTabOrder(self.tabWidget, self.webView)
 
     def retranslateUi(self, MplMainWindow):
-        MplMainWindow.setWindowTitle(QtGui.QApplication.translate("MplMainWindow", "Sequential Clearance 11kV System", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_10.setText(QtGui.QApplication.translate("MplMainWindow", "Breaker Opening Time", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox8.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Feeder CT Primary Ratio", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox8.setSuffix(QtGui.QApplication.translate("MplMainWindow", "/1", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplpushButton.setText(QtGui.QApplication.translate("MplMainWindow", "Re-calculate", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox6.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Incomer CT Primary Ratio", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox6.setSuffix(QtGui.QApplication.translate("MplMainWindow", "/1", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox7.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Feeder CT Primary Ratio", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox7.setSuffix(QtGui.QApplication.translate("MplMainWindow", "/1", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr1_highset_spinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Highset Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox5.setToolTip(QtGui.QApplication.translate("MplMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MplMainWindow.setWindowTitle(_translate("MplMainWindow", "Sequential Clearance 11kV System", None))
+        self.label_10.setText(_translate("MplMainWindow", "Breaker Opening Time", None))
+        self.mpldoubleSpinBox8.setToolTip(_translate("MplMainWindow", "Feeder CT Primary Ratio", None))
+        self.mpldoubleSpinBox8.setSuffix(_translate("MplMainWindow", "/1", None))
+        self.mplpushButton.setText(_translate("MplMainWindow", "Re-calculate", None))
+        self.mpldoubleSpinBox6.setToolTip(_translate("MplMainWindow", "Incomer CT Primary Ratio", None))
+        self.mpldoubleSpinBox6.setSuffix(_translate("MplMainWindow", "/1", None))
+        self.mpldoubleSpinBox7.setToolTip(_translate("MplMainWindow", "Feeder CT Primary Ratio", None))
+        self.mpldoubleSpinBox7.setSuffix(_translate("MplMainWindow", "/1", None))
+        self.mplfdr1_highset_spinBox.setToolTip(_translate("MplMainWindow", "Highset Pickup", None))
+        self.mpldoubleSpinBox5.setToolTip(_translate("MplMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_8.setText(QtGui.QApplication.translate("MplMainWindow", "Feeder 2", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox3.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Feeder Multiplier", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox2.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Incomer Multiplier", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_7.setText(QtGui.QApplication.translate("MplMainWindow", "Tx Impedance 20MVA single unit", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplinc_highset_SpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Highset Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_11.setText(QtGui.QApplication.translate("MplMainWindow", "Curve Type", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Zloop is the cable or overhead circuit between the two feeders\n"
-"Zsource in this instance is the transformer impedance", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("MplMainWindow", "Feeder 1", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox10.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Feeder Multiplier", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr2_highset_SpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Highset Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr2_cbtime_SpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "opening time", None, QtGui.QApplication.UnicodeUTF8))
-        self.curveComboBox_3.setItemText(0, QtGui.QApplication.translate("MplMainWindow", "NI", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_3.setText(QtGui.QApplication.translate("MplMainWindow", "Zloop to Zsource ratio", None, QtGui.QApplication.UnicodeUTF8))
-        self.curveComboBox_2.setItemText(0, QtGui.QApplication.translate("MplMainWindow", "NI", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplspinBox.setSuffix(QtGui.QApplication.translate("MplMainWindow", " percent", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_5.setText(QtGui.QApplication.translate("MplMainWindow", "Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplinc_cbtime_SpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "opening time", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox9.setToolTip(QtGui.QApplication.translate("MplMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None))
+        self.label_8.setText(_translate("MplMainWindow", "Feeder 2", None))
+        self.mpldoubleSpinBox3.setToolTip(_translate("MplMainWindow", "Feeder Multiplier", None))
+        self.mpldoubleSpinBox2.setToolTip(_translate("MplMainWindow", "Incomer Multiplier", None))
+        self.label_7.setText(_translate("MplMainWindow", "Tx Impedance 20MVA single unit", None))
+        self.mplinc_highset_SpinBox.setToolTip(_translate("MplMainWindow", "Highset Pickup", None))
+        self.label_11.setText(_translate("MplMainWindow", "Curve Type", None))
+        self.mpldoubleSpinBox.setToolTip(_translate("MplMainWindow", "Zloop is the cable or overhead circuit between the two feeders\n"
+"Zsource in this instance is the transformer impedance", None))
+        self.label_2.setText(_translate("MplMainWindow", "Feeder 1", None))
+        self.mpldoubleSpinBox10.setToolTip(_translate("MplMainWindow", "Feeder Multiplier", None))
+        self.mplfdr2_highset_SpinBox.setToolTip(_translate("MplMainWindow", "Highset Pickup", None))
+        self.mplfdr2_cbtime_SpinBox.setToolTip(_translate("MplMainWindow", "opening time", None))
+        self.curveComboBox_3.setItemText(0, _translate("MplMainWindow", "NI", None))
+        self.label_3.setText(_translate("MplMainWindow", "Zloop to Zsource ratio", None))
+        self.curveComboBox_2.setItemText(0, _translate("MplMainWindow", "NI", None))
+        self.mplspinBox.setSuffix(_translate("MplMainWindow", " percent", None))
+        self.label_5.setText(_translate("MplMainWindow", "Pickup", None))
+        self.mplinc_cbtime_SpinBox.setToolTip(_translate("MplMainWindow", "opening time", None))
+        self.mpldoubleSpinBox9.setToolTip(_translate("MplMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_6.setText(QtGui.QApplication.translate("MplMainWindow", "Time Multiplier", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr2_checkBox.setText(QtGui.QApplication.translate("MplMainWindow", "Highset Y/N", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("MplMainWindow", "Incomer", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplinc_checkBox.setText(QtGui.QApplication.translate("MplMainWindow", "Highset Y/N", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_9.setText(QtGui.QApplication.translate("MplMainWindow", "High Set Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox4.setToolTip(QtGui.QApplication.translate("MplMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None))
+        self.label_6.setText(_translate("MplMainWindow", "Time Multiplier", None))
+        self.mplfdr2_checkBox.setText(_translate("MplMainWindow", "Highset Y/N", None))
+        self.label.setText(_translate("MplMainWindow", "Incomer", None))
+        self.mplinc_checkBox.setText(_translate("MplMainWindow", "Highset Y/N", None))
+        self.label_9.setText(_translate("MplMainWindow", "High Set Pickup", None))
+        self.mpldoubleSpinBox4.setToolTip(_translate("MplMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr1_checkBox.setText(QtGui.QApplication.translate("MplMainWindow", "Highset Y/N", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("MplMainWindow", "CT Ratio", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr1_cbtime_SpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "opening time", None, QtGui.QApplication.UnicodeUTF8))
-        self.curveComboBox_1.setItemText(0, QtGui.QApplication.translate("MplMainWindow", "NI", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setToolTip(QtGui.QApplication.translate("MplMainWindow", "<html><head/><body><p>Change the curve shapes</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_1.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QtGui.QApplication.translate("MplMainWindow", "Margin Plot", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_2.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1), QtGui.QApplication.translate("MplMainWindow", "Margin Plot Detail", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_5.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_11.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QtGui.QApplication.translate("MplMainWindow", "Incomer", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QtGui.QApplication.translate("MplMainWindow", "Feeder1/2", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QtGui.QApplication.translate("MplMainWindow", "Spare", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_12.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_3.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_4.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_10), QtGui.QApplication.translate("MplMainWindow", "ITOC Curves", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QtGui.QApplication.translate("MplMainWindow", "Tesla Wiki", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuFile.setTitle(QtGui.QApplication.translate("MplMainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplactionQuit.setText(QtGui.QApplication.translate("MplMainWindow", "Quit", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplactionOpen.setText(QtGui.QApplication.translate("MplMainWindow", "Open", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSave.setText(QtGui.QApplication.translate("MplMainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSaveAs.setText(QtGui.QApplication.translate("MplMainWindow", "SaveAs", None, QtGui.QApplication.UnicodeUTF8))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None))
+        self.mplfdr1_checkBox.setText(_translate("MplMainWindow", "Highset Y/N", None))
+        self.label_4.setText(_translate("MplMainWindow", "CT Ratio", None))
+        self.mplfdr1_cbtime_SpinBox.setToolTip(_translate("MplMainWindow", "opening time", None))
+        self.curveComboBox_1.setItemText(0, _translate("MplMainWindow", "NI", None))
+        self.tabWidget.setToolTip(_translate("MplMainWindow", "<html><head/><body><p>Matplotlib</p></body></html>", None))
+        self.mpl_1.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MplMainWindow", "Margin Plot", None))
+        self.mpl_2.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1), _translate("MplMainWindow", "Margin Plot Detail", None))
+        self.mpl_5.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.mpl_11.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MplMainWindow", "Incomer", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MplMainWindow", "Feeder1/2", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MplMainWindow", "Spare", None))
+        self.mpl_12.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.mpl_3.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.mpl_4.setToolTip(_translate("MplMainWindow", "Matplotlib", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_10), _translate("MplMainWindow", "ITOC Curves", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MplMainWindow", "Tesla Wiki", None))
+        self.menuFile.setTitle(_translate("MplMainWindow", "File", None))
+        self.mplactionQuit.setText(_translate("MplMainWindow", "Quit", None))
+        self.mplactionOpen.setText(_translate("MplMainWindow", "Open", None))
+        self.actionSave.setText(_translate("MplMainWindow", "Save", None))
+        self.actionSaveAs.setText(_translate("MplMainWindow", "SaveAs", None))
 
 from PyQt4 import QtWebKit
 from mplwidget import MplWidget
 import sequential_clearance_resources_rc
 import sequential_clearance_resources2_rc
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    MplMainWindow = QtGui.QMainWindow()
+    ui = Ui_MplMainWindow()
+    ui.setupUi(MplMainWindow)
+    MplMainWindow.show()
+    sys.exit(app.exec_())
+

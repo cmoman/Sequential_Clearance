@@ -200,7 +200,10 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_1.canvas.ax.clear()
         self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')
         self.mpl_1.canvas.ax.set_xlabel('m')  
-        self.mpl_1.canvas.ax.set_ylabel('Margin in seconds')
+        self.mpl_1.canvas.ax.set_ylabel('Seconds')
+        
+        #run the fix scale though check button
+        #need to get present scale then apply fix or just apply a fix scale button.
         self.mpl_1.canvas.ax.set_ylim(0,1.2)
         self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Inc margin second trip')
         self.mpl_1.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='b', marker=',',label='Inc margin first trip')
@@ -221,8 +224,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         #plot the tab 3 graph
         self.mpl_2.canvas.ax.clear()
         
-        self.mpl_2.canvas.ax.set_title('Margin between incomer and feeders to trip.')
-        self.mpl_2.canvas.ax.set_ylabel('Margin in seconds')
+        self.mpl_2.canvas.ax.set_title('Margins and total time to trip (Stage1+2)')
+        self.mpl_2.canvas.ax.set_ylabel('Seconds')
         self.mpl_2.canvas.ax.set_xlabel('m')   
         self.mpl_2.canvas.ax.grid(True)
         self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Inc margin')

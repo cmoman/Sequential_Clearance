@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -645,22 +645,15 @@ p, li { white-space: pre-wrap; }
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
           <layout class="QGridLayout" name="gridLayout_9">
            <property name="sizeConstraint">
             <enum>QLayout::SetDefaultConstraint</enum>
            </property>
            <item row="0" column="0">
-            <widget class="QLabel" name="label_13">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap resource="sequential_clearance_resources2.qrc">:/images/images/schematic_from_model_view.svg</pixmap>
-             </property>
-             <property name="scaledContents">
-              <bool>true</bool>
-             </property>
-            </widget>
+            <widget class="widget4svg" name="widget4svg" native="true"/>
            </item>
           </layout>
          </widget>
@@ -1174,6 +1167,12 @@ p, li { white-space: pre-wrap; }
    <class>MplWidget</class>
    <extends>QWidget</extends>
    <header location="global">mplwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>widget4svg</class>
+   <extends>QWidget</extends>
+   <header>widget4svg.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

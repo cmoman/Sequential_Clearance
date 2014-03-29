@@ -11,8 +11,6 @@ import numpy as np
 import sys
 import time
 
-sys.path.append('./widgets')
-
 #import my sequential clearance grunt.
 import sequential_clearance_backend as seq
 
@@ -202,10 +200,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_1.canvas.ax.clear()
         self.mpl_1.canvas.ax.set_title('Margin between incomer and feeders to trip.')
         self.mpl_1.canvas.ax.set_xlabel('m')  
-        self.mpl_1.canvas.ax.set_ylabel('Seconds')
-        
-        #run the fix scale though check button
-        #need to get present scale then apply fix or just apply a fix scale button.
+        self.mpl_1.canvas.ax.set_ylabel('Margin in seconds')
         self.mpl_1.canvas.ax.set_ylim(0,1.2)
         self.mpl_1.canvas.ax.plot(m_store,margin_store,antialiased=True,alpha=.5,color='g', marker=',',label='Inc margin second trip')
         self.mpl_1.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='b', marker=',',label='Inc margin first trip')
@@ -226,8 +221,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         #plot the tab 3 graph
         self.mpl_2.canvas.ax.clear()
         
-        self.mpl_2.canvas.ax.set_title('Margins and total time to trip (Stage1+2)')
-        self.mpl_2.canvas.ax.set_ylabel('Seconds')
+        self.mpl_2.canvas.ax.set_title('Margin between incomer and feeders to trip.')
+        self.mpl_2.canvas.ax.set_ylabel('Margin in seconds')
         self.mpl_2.canvas.ax.set_xlabel('m')   
         self.mpl_2.canvas.ax.grid(True)
         self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Inc margin')
@@ -377,7 +372,6 @@ def fakeIt():
 
 # create the GUI application
 def main():
-    import time
     app=QtGui.QApplication(sys.argv)
     app.setOrganizationName("cmoman.ltd")
     app.setOrganizationDomain("blahdeblah.co.nz")
@@ -387,23 +381,14 @@ def main():
     #image.setColor(2,2)
     #pixmap3=QtGui.QPixmap("images/blank.png")
     pixmap3=QtGui.QPixmap("images/title.svg")
-    #pixmap3=QtGui.QPixmap("images/Logo_Export_no_text.png")
-    #pixmap3=QtGui.QPixmap("images/schematic_from_model_view.svg")
+    pixmap2=QtGui.QPixmap("images/schematic_from_model_view.svg")
     pixmap=pixmap3.scaled(400,400,1)
     
-    splash = QtGui.QSplashScreen(pixmap, QtCore.Qt.WindowStaysOnTopHint)
-    splash.setMask(pixmap3.mask())
+    splash = QtGui.QSplashScreen(pixmap)
     
     splash.show()
 
     splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
-    
-    app.processEvents()
-    
-    time.sleep(2)
-    
-    splash.showMessage(QtCore.QString("Sequential Clearance 2"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
-    app.processEvents()
 
     dmw = DesignerMainWindow() # instantiate a window
     # show it

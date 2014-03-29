@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
-    <height>488</height>
+    <width>819</width>
+    <height>643</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -653,7 +653,18 @@ p, li { white-space: pre-wrap; }
             <enum>QLayout::SetDefaultConstraint</enum>
            </property>
            <item row="0" column="0">
-            <widget class="widget4svg" name="widget4svg" native="true"/>
+            <widget class="widget4svg" name="widget4svg">
+             <widget class="widget4svg" name="widget4svg_2">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>391</width>
+                <height>221</height>
+               </rect>
+              </property>
+             </widget>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -681,7 +692,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_1" native="true">
+            <widget class="MplWidget" name="mpl_1">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -792,7 +803,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_2" native="true">
+            <widget class="MplWidget" name="mpl_2">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -830,7 +841,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_15">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_5" native="true">
+            <widget class="MplWidget" name="mpl_5">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -861,7 +872,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_16">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_11" native="true">
+            <widget class="MplWidget" name="mpl_11">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -905,7 +916,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_14">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_6" native="true"/>
+            <widget class="MplWidget" name="mpl_6"/>
            </item>
           </layout>
          </widget>
@@ -923,7 +934,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_8" native="true"/>
+            <widget class="MplWidget" name="mpl_8"/>
            </item>
           </layout>
          </widget>
@@ -951,7 +962,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_7" native="true"/>
+            <widget class="MplWidget" name="mpl_7"/>
            </item>
           </layout>
          </widget>
@@ -966,7 +977,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_11">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_9" native="true">
+            <widget class="MplWidget" name="mpl_9">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -974,6 +985,28 @@ p, li { white-space: pre-wrap; }
               </sizepolicy>
              </property>
             </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_14">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_12">
+           <item row="0" column="0">
+            <widget class="MplWidget" name="mplwidget"/>
            </item>
           </layout>
          </widget>
@@ -995,7 +1028,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_17">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_12" native="true">
+            <widget class="MplWidget" name="mpl_12">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -1026,7 +1059,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_18">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_3" native="true">
+            <widget class="MplWidget" name="mpl_3">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -1057,7 +1090,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_19">
            <item row="0" column="0">
-            <widget class="MplWidget" name="mpl_4" native="true">
+            <widget class="MplWidget" name="mpl_4">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -1120,7 +1153,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>674</width>
+     <width>819</width>
      <height>21</height>
     </rect>
    </property>
@@ -1159,21 +1192,21 @@ p, li { white-space: pre-wrap; }
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
-  </customwidget>
-  <customwidget>
    <class>MplWidget</class>
    <extends>QWidget</extends>
-   <header location="global">mplwidget.h</header>
+   <header>mplwidget</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>widget4svg</class>
    <extends>QWidget</extends>
-   <header>widget4svg.h</header>
+   <header>widget4svg</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
   </customwidget>
  </customwidgets>
  <tabstops>

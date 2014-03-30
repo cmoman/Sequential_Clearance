@@ -22,13 +22,13 @@ class MplCanvas(FigureCanvas):
         self.fig = Figure()
         super(MplCanvas, self).__init__(self.fig)
         self.ax = self.fig.add_subplot(111)
-        
+        self.ax2= self.ax.twinx() # Added the second axis
 
-class MplWidget(QtGui.QWidget):
+class MplTwinAxisWidget(QtGui.QWidget):
     """Widget defined in Qt Designer"""
     def __init__(self, parent = None):
         # initialization of Qt MainWindow widget
-        super(MplWidget, self).__init__(parent)  #parent is not none
+        super(MplTwinAxisWidget, self).__init__(parent)  #parent is not none
         #QtGui.QWidget.__init__(self, parent)
         # set the canvas to the Matplotlib widget
         self.canvas = MplCanvas()

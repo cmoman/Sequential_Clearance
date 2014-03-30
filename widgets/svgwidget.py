@@ -11,10 +11,10 @@ except AttributeError:
     def _fromUtf8(s):
         return s
 
-class widget4svg(QtSvg.QSvgWidget):
+class SvgWidget(QtSvg.QSvgWidget):
     
     def __init__(self, parent=None):
-        super(widget4svg, self).__init__(parent)
+        super(SvgWidget, self).__init__(parent)
         
         self.load(_fromUtf8(':images/images/schematic_from_model_view.svg'))
 

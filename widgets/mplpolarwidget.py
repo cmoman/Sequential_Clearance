@@ -20,15 +20,15 @@ class MplCanvas(FigureCanvas):
     def __init__(self):
         # setup Matplotlib Figure and Axis
         self.fig = Figure()
+        #self.fig2 = Figure()
         super(MplCanvas, self).__init__(self.fig)
-        self.ax = self.fig.add_subplot(111)
-        
+        self.ax = self.fig.add_subplot(111, polar=True)
 
-class MplWidget(QtGui.QWidget):
+class MplPolarWidget(QtGui.QWidget):
     """Widget defined in Qt Designer"""
     def __init__(self, parent = None):
         # initialization of Qt MainWindow widget
-        super(MplWidget, self).__init__(parent)  #parent is not none
+        super(MplPolarWidget, self).__init__(parent)  #parent is not none
         #QtGui.QWidget.__init__(self, parent)
         # set the canvas to the Matplotlib widget
         self.canvas = MplCanvas()

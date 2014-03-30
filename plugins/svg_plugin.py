@@ -8,11 +8,11 @@ from PyQt4.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 import os
 from matplotlib import rcParams
-from widget4svg import widget4svg
+from svgwidget import SvgWidget
 
 rcParams['font.size'] = 9
 
-class SVGPlugin(QPyDesignerCustomWidgetPlugin):
+class SvgPlugin(QPyDesignerCustomWidgetPlugin):
     def __init__(self, parent=None):
         QPyDesignerCustomWidgetPlugin.__init__(self)
 
@@ -28,10 +28,10 @@ class SVGPlugin(QPyDesignerCustomWidgetPlugin):
         return self._initialized
 
     def createWidget(self, parent):
-        return widget4svg(parent)
+        return SvgWidget(parent)
 
     def name(self):
-        return "widget4svg"
+        return "SvgWidget"
 
     def group(self):
         return "Matplotlib4devs"
@@ -50,17 +50,17 @@ class SVGPlugin(QPyDesignerCustomWidgetPlugin):
         return False
 
     def domXml(self):
-        return '<widget class="widget4svg" name="widget4svg">\n' \
+        return '<widget class="SvgWidget" name="svgwidget">\n' \
                '</widget>\n'
 
     def includeFile(self):
-        return "widget4svg"
+        return "svgwidget"
 
 
 if __name__ == '__main__':
     import sys
     from PyQt4.QtGui import QApplication
     app = QApplication(sys.argv)
-    widget = widget4svg()
+    widget = SvgWidget()
     widget.show()
     sys.exit(app.exec_())

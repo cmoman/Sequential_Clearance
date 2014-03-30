@@ -106,16 +106,16 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
         QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
- 
-        #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.mplpushButton, QtCore.SLOT("click()"))
-        #QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.mplpushButton, QtCore.SLOT("click()"))  
+        QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
+
+        self.update_graph() 
         
-        #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('editingFinished()'), self.update_graph)
-        #QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('editingFinished()'), self.update_graph)              
+        self.bling()
         
-        self.update_graph()        
-        
-        
+    def updateBrowser(self): 
+        url=str(self.webViewlineEdit.text())
+        print url
+        self.webView.load(QtCore.QUrl(url))
         
     def changeValue(self, value):
         
@@ -134,6 +134,20 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         #print value
         self.ratio=value
         self.mpldoubleSpinBox.setValue(value) 
+        
+    def bling(self):
+        self.scene= QtGui.QGraphicsScene()
+        self.scene.setSceneRect(0, 0, 250, 250)
+        self.graphicsView.setScene(self.scene)
+        
+        policy=QtCore.Qt.ScrollBarAlwaysOn
+        self.graphicsView.setVerticalScrollBarPolicy(policy)
+        self.graphicsView.setHorizontalScrollBarPolicy(policy)
+        self.graphicsView.setWindowTitle("Animation")
+        pen=QtGui.QPen(QtGui.QColor('blue'))
+
+        self.scene.addEllipse(0.0,0.0,20,20,QtGui.QPen(QtGui.QColor('blue')))
+        self.scene.addEllipse(0.0,0.0,200,200,QtGui.QPen(QtGui.QColor('red')))
 
 
       
@@ -213,12 +227,12 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_1.canvas.ax.axhline(0.4,color='r')
         self.mpl_1.canvas.ax.legend(loc='best')
         
-        #self.mpl_1.canvas.ax2.clear()
-        #self.mpl_1.canvas.ax2.set_ylabel('Percentage travel')
-        #self.mpl_1.canvas.ax2.grid(True) 
-        #self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
-        #self.mpl_1.canvas.ax2.set_ylim(0.0,100)
-        #self.mpl_1.canvas.ax2.legend(loc='center right')
+        self.mpl_1.canvas.ax2.clear()
+        self.mpl_1.canvas.ax2.set_ylabel('Percentage travel')
+        self.mpl_1.canvas.ax2.grid(True) 
+        self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
+        self.mpl_1.canvas.ax2.set_ylim(0.0,100)
+        self.mpl_1.canvas.ax2.legend(loc='center right')
         
         
         self.mpl_1.canvas.draw()
@@ -254,11 +268,9 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_5.canvas.ax.set_ylim(0.0,4.0)
         self.mpl_5.canvas.ax.grid(True) 
         self.mpl_5.canvas.ax.plot(m_store,j1,label='Fdr1//Fdr2 t',color='red')
-        #self.mpl_5.canvas.ax.plot(m_store,j2,label='Fdr1 open t',color='green')
         self.mpl_5.canvas.ax.plot(m_store,j3,label='Fdr2 open t',color='green')
 
         self.mpl_5.canvas.ax2.plot(m_store,m1,label='Fdr1//Fdr2 I',color='red',linestyle='-.')
-        #self.mpl_5.canvas.ax2.plot(m_store,m2,label='Fdr1 open I' ,color='green',linestyle='-.')
         self.mpl_5.canvas.ax2.plot(m_store,m3,label='Fdr2 open I',color='green',linestyle='-.')
         
         self.mpl_5.canvas.ax.legend(loc=2)
@@ -309,11 +321,9 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_11.canvas.ax.grid(True) 
         self.mpl_11.canvas.ax.plot(m_store,j1,label='Fdr1//Fdr2 t',color='red')
         self.mpl_11.canvas.ax.plot(m_store,j2,label='Fdr1 open t',color='blue')
-        #self.mpl_11.canvas.ax.plot(m_store,j3,label='Fdr2 open t',color='blue')
 
         self.mpl_11.canvas.ax2.plot(m_store,m1,label='Fdr1//Fdr2 I',color='red',linestyle='-.')
         self.mpl_11.canvas.ax2.plot(m_store,m2,label='Fdr1 open I' ,color='blue',linestyle='-.')
-        #self.mpl_11.canvas.ax2.plot(m_store,m3,label='Fdr2 open I',color='blue',linestyle='-.')
         
         self.mpl_11.canvas.ax.legend(loc=2)
         self.mpl_11.canvas.ax2.legend(loc=1)
@@ -398,9 +408,9 @@ def main():
 
     splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
     
-    app.processEvents()
+    #app.processEvents()
     
-    time.sleep(2)
+    #time.sleep(2)
     
     splash.showMessage(QtCore.QString("Sequential Clearance 2"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
     app.processEvents()
@@ -416,5 +426,4 @@ def main():
     
 if __name__ == '__main__':
     main()
-
 

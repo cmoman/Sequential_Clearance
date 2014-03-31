@@ -54,7 +54,7 @@ class SvgPlugin(QPyDesignerCustomWidgetPlugin):
                '</widget>\n'
 
     def includeFile(self):
-        return "svgwidget"
+        return "widgets.svgwidget"
 
 
 if __name__ == '__main__':

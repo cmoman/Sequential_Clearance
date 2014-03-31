@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>1</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -1180,23 +1180,23 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>MplWidget</class>
    <extends>QWidget</extends>
-   <header>mplwidget</header>
+   <header>widgets.mplwidget</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>MplPolarWidget</class>
    <extends>QWidget</extends>
-   <header>mplpolarwidget</header>
+   <header>widgets.mplpolarwidget</header>
   </customwidget>
   <customwidget>
    <class>MplTwinAxisWidget</class>
    <extends>QWidget</extends>
-   <header>mpltwinaxiswidget</header>
+   <header>widgets.mpltwinaxiswidget</header>
   </customwidget>
   <customwidget>
    <class>SvgWidget</class>
    <extends>QWidget</extends>
-   <header>svgwidget</header>
+   <header>widgets.svgwidget</header>
   </customwidget>
   <customwidget>
    <class>QWebView</class>

@@ -54,7 +54,7 @@ class MatplotlibPlugin(QPyDesignerCustomWidgetPlugin):
                '</widget>\n'
 
     def includeFile(self):
-        return "mplwidget"
+        return "widgets.mplwidget"
 
 
 if __name__ == '__main__':

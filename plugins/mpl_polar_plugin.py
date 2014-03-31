@@ -54,7 +54,7 @@ class MatplotlibPolarPlugin(QPyDesignerCustomWidgetPlugin):
                '</widget>\n'
 
     def includeFile(self):
-        return "mplpolarwidget"
+        return "widgets.mplpolarwidget"
 
 
 if __name__ == '__main__':

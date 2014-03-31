@@ -54,7 +54,7 @@ class MatplotlibTwinAxisPlugin(QPyDesignerCustomWidgetPlugin):
                '</widget>\n'
 
     def includeFile(self):
-        return "mpltwinaxiswidget"
+        return "widgets.mpltwinaxiswidget"
 
 
 if __name__ == '__main__':

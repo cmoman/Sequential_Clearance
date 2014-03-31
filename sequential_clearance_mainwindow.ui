@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>819</width>
-    <height>643</height>
+    <width>877</width>
+    <height>773</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>9</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -1139,7 +1139,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>819</width>
+     <width>877</width>
      <height>21</height>
     </rect>
    </property>
@@ -1240,7 +1240,6 @@ p, li { white-space: pre-wrap; }
  <resources>
   <include location="sequential_clearance_resources.qrc"/>
   <include location="sequential_clearance_resources2.qrc"/>
-  <include location="../../Python/Learning/Sequential_Clearance/trunk/sequential_clearance_resources.qrc"/>
  </resources>
  <connections>
   <connection>

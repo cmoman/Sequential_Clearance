@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'C:\Users\chris.ohalloran\Documents\GitHub\Sequential_Clearance\sequential_clearance_mainwindow.ui'
 #
-# Created: Mon Mar 31 09:25:37 2014
+# Created: Mon Mar 31 13:46:31 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_MplMainWindow(object):
     def setupUi(self, MplMainWindow):
         MplMainWindow.setObjectName(_fromUtf8("MplMainWindow"))
-        MplMainWindow.resize(819, 643)
+        MplMainWindow.resize(877, 773)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -584,7 +584,7 @@ class Ui_MplMainWindow(object):
         self.gridLayout_10.addWidget(self.tabWidget, 2, 0, 1, 1)
         MplMainWindow.setCentralWidget(self.mplcentralwidget)
         self.menubar = QtGui.QMenuBar(MplMainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 819, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 877, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuFile = QtGui.QMenu(self.menubar)
         self.menuFile.setObjectName(_fromUtf8("menuFile"))
@@ -612,7 +612,7 @@ class Ui_MplMainWindow(object):
         self.label_9.setBuddy(self.mplinc_highset_SpinBox)
 
         self.retranslateUi(MplMainWindow)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(9)
         QtCore.QObject.connect(self.curveComboBox_2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox3, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox4, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)

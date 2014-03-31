@@ -9,10 +9,10 @@ class Arrow(QtGui.QGraphicsPixmapItem):
     def __init__(self):
         super(Arrow, self).__init__()
         
-        self.setPixmap(QtGui.QPixmap('arrow.png'))
+        self.setPixmap(QtGui.QPixmap(':/images/arrow.png'))
         
 class Example(QtGui.QGraphicsView):
-    def __init__(self,bling):
+    def __init__(self,parent=None):
         super(Example, self).__init__()
         
         self.setGeometry(300, 300, 350, 350)

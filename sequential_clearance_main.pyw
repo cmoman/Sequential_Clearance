@@ -11,7 +11,12 @@ import numpy as np
 import sys
 import time
 
-sys.path.append('./widgets')
+#sys.path.append('./widgets')
+#sys.path.insert(0, './widgets')
+
+#from widgets import mplwidget
+
+#from widgets import *
 
 #import my sequential clearance grunt.
 import sequential_clearance_backend as seq

@@ -400,8 +400,8 @@ def main():
     
     image = QtGui.QImage(400,400,QtGui.QImage.Format_RGB32)
     #image.setColor(2,2)
-    #pixmap3=QtGui.QPixmap("images/blank.png")
-    pixmap3=QtGui.QPixmap("images/title.svg")
+    pixmap3=QtGui.QPixmap(":/images/arrow.png")
+    #pixmap3=QtGui.QPixmap(":/images/title.svg")
     #pixmap3=QtGui.QPixmap("images/Logo_Export_no_text.png")
     #pixmap3=QtGui.QPixmap("images/schematic_from_model_view.svg")
     pixmap=pixmap3.scaled(400,400,1)

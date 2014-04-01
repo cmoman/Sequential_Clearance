@@ -1,10 +1,31 @@
 <RCC>
+  <qresource prefix="icons">
+    <file>images/back.png</file>
+    <file>images/editinvert.png</file>
+    <file>images/editmirror.png</file>
+    <file>images/editmirrorhoriz.png</file>
+    <file>images/editmirrorvert.png</file>
+    <file>images/editresize.png</file>
+    <file>images/editswap.png</file>
+    <file>images/editunmirror.png</file>
+    <file>images/editzoom.png</file>
+    <file>images/filenew.png</file>
+    <file>images/fileopen.png</file>
+    <file>images/fileprint.png</file>
+    <file>images/filequit.png</file>
+    <file>images/filesave.png</file>
+    <file>images/filesaveas.png</file>
+    <file>images/home.png</file>
+    <file>images/icon.png</file>
+  </qresource>
   <qresource prefix="images">
     <file>arrow.png</file>
-    <file>images/title.svg</file>
+    <file>images/blank.png</file>
     <file>images/Logo_Export_no_text.png</file>
-    <file alias="splash">images/schematic.png</file>
-    <file alias="splash">images/blank.png</file>
-    <file alias="splash">images/schematic_from_model_view.png</file>
+    <file>images/schematic.png</file>
+    <file>images/schematic.svg</file>
+    <file>images/schematic_from_model_view.png</file>
+    <file>images/schematic_from_model_view.svg</file>
+    <file>images/title.svg</file>
   </qresource>
 </RCC>

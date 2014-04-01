@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/cmoman/git/Sequential_Clearance/sequential_clearance_mainwindow.ui'
 #
-# Created: Mon Mar 31 22:12:42 2014
+# Created: Tue Apr  1 21:50:02 2014
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -471,7 +471,7 @@ class Ui_MplMainWindow(object):
         self.mplpolarwidget_2.setObjectName(_fromUtf8("mplpolarwidget_2"))
         self.gridLayout_12.addWidget(self.mplpolarwidget_2, 0, 1, 1, 1)
         self.gridLayout_13.addWidget(self.frame_14, 0, 0, 1, 1)
-        self.tabWidget.addTab(self.tab_7, icon, _fromUtf8(""))
+        self.tabWidget.addTab(self.tab_7, _fromUtf8(""))
         self.tab_10 = QtGui.QWidget()
         self.tab_10.setObjectName(_fromUtf8("tab_10"))
         self.horizontalLayout_2 = QtGui.QHBoxLayout(self.tab_10)
@@ -574,12 +574,6 @@ class Ui_MplMainWindow(object):
         self.tabWidget.addTab(self.tab_9, _fromUtf8(""))
         self.gridLayout_10.addWidget(self.tabWidget, 2, 0, 1, 1)
         MplMainWindow.setCentralWidget(self.mplcentralwidget)
-        self.menubar = QtGui.QMenuBar(MplMainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 877, 21))
-        self.menubar.setObjectName(_fromUtf8("menubar"))
-        self.menuFile = QtGui.QMenu(self.menubar)
-        self.menuFile.setObjectName(_fromUtf8("menuFile"))
-        MplMainWindow.setMenuBar(self.menubar)
         self.mplactionQuit = QtGui.QAction(MplMainWindow)
         self.mplactionQuit.setObjectName(_fromUtf8("mplactionQuit"))
         self.mplactionOpen = QtGui.QAction(MplMainWindow)
@@ -588,12 +582,6 @@ class Ui_MplMainWindow(object):
         self.actionSave.setObjectName(_fromUtf8("actionSave"))
         self.actionSaveAs = QtGui.QAction(MplMainWindow)
         self.actionSaveAs.setObjectName(_fromUtf8("actionSaveAs"))
-        self.menuFile.addAction(self.mplactionOpen)
-        self.menuFile.addAction(self.actionSave)
-        self.menuFile.addAction(self.actionSaveAs)
-        self.menuFile.addSeparator()
-        self.menuFile.addAction(self.mplactionQuit)
-        self.menubar.addAction(self.menuFile.menuAction())
         self.label_6.setBuddy(self.mpldoubleSpinBox2)
         self.label_4.setBuddy(self.mpldoubleSpinBox6)
         self.label_3.setBuddy(self.mpldoubleSpinBox)
@@ -603,7 +591,7 @@ class Ui_MplMainWindow(object):
         self.label_9.setBuddy(self.mplinc_highset_SpinBox)
 
         self.retranslateUi(MplMainWindow)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(6)
         QtCore.QObject.connect(self.curveComboBox_2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox3, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox4, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
@@ -725,7 +713,6 @@ class Ui_MplMainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QtGui.QApplication.translate("MplMainWindow", "Tesla Wiki", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QtGui.QApplication.translate("MplMainWindow", "Graphics", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), QtGui.QApplication.translate("MplMainWindow", "Page", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuFile.setTitle(QtGui.QApplication.translate("MplMainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
         self.mplactionQuit.setText(QtGui.QApplication.translate("MplMainWindow", "Quit", None, QtGui.QApplication.UnicodeUTF8))
         self.mplactionOpen.setText(QtGui.QApplication.translate("MplMainWindow", "Open", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSave.setText(QtGui.QApplication.translate("MplMainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
@@ -738,7 +725,6 @@ from widgets.mpltwinaxiswidget import MplTwinAxisWidget
 from widgets.mplwidget import MplWidget
 from widgets.mplpolarwidget import MplPolarWidget
 import sequential_clearance_resources_rc
-import sequential_clearance_resources2_rc
 
 if __name__ == "__main__":
     import sys

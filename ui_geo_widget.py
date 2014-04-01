@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/cmoman/git/Sequential_Clearance/geo_widget.ui'
 #
-# Created: Fri Mar 28 22:05:33 2014
+# Created: Tue Apr  1 21:50:03 2014
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!

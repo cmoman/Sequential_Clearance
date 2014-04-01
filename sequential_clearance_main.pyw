@@ -71,6 +71,115 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         #self.webView.setUrl(QtCore.QUrl(_fromUtf8("http://wiki.tesla.local/index.php/Main_Page")))
         
+        self.statusBar2()
+        self.addDockwidget2()
+        self.toolbar2()
+        
+    def statusBar2(self):
+        self.sizeLabel = QtGui.QLabel()
+        self.sizeLabel.setFrameStyle(QtGui.QFrame.StyledPanel | QtGui.QFrame.Sunken) # this | syntax is something new
+        
+        status123 = self.statusBar()
+        status123.setSizeGripEnabled(False)
+        status123.addPermanentWidget(self.sizeLabel)
+        status123.showMessage("Ready", 5000)
+     
+    def toolbar2(self) :
+
+        fileNewAction = self.createAction("&New...", self.fileNew, QtGui.QKeySequence.New, "filenew", "Create an image file") # the final text goes to the status bar
+        fileOpenAction = self.createAction("&Open...", self.fileOpen, QtGui.QKeySequence.Open, "fileopen", "Open an existing image file") # the KeySequence must connect into some bigger picture that included the short cut and the icon.
+        fileSaveAction = self.createAction("&Save", self.fileSave, QtGui.QKeySequence.Save, "filesave", "Save the image")
+        fileSaveAsAction = self.createAction("Save &As", self.fileSaveAs, icon="filesaveas", tip="Save the image using a new name")
+        filePrintAction = self.createAction("&Print", self.filePrint, QtGui.QKeySequence.Print, "fileprint", "Print the image")
+        fileQuitAction = self.createAction("&Quit", self.close, "Cntrl+Q", "filequit", "Close the application")
+        self.fileMenu = self.menuBar().addMenu("&File")  #this creates the dropdown on which to now add the title "File"
+        self.fileMenuActions = (fileNewAction, fileOpenAction, fileSaveAsAction, None, filePrintAction, fileQuitAction) # this grabs all the actions from above
+        self.connect(self.fileMenu, QtCore.SIGNAL("aboutToShow()"),self.updateFileMenu) 
+        
+        fileToolbar = self.addToolBar("File")
+        fileToolbar.setObjectName("FileToolBar")
+        self.addActions(fileToolbar, (fileNewAction, fileOpenAction, fileSaveAsAction))
+        
+    def createAction(self, text, slot=None, shortcut =None, icon=None, tip=None, checkable=False, signal="triggered()"):
+        action = QtGui.QAction(text, self)
+        
+        if icon is not None:
+            action.setIcon(QtGui.QIcon(":/icons/images/%s.png" % icon))  # this is where the icons get attached to the Action.
+        if shortcut is not None:
+            action.setShortcut(shortcut)
+        if tip is not None:
+            action.setToolTip(tip)
+            action.setStatusTip(tip)
+        if slot is not None:
+            self.connect(action, QtCore.SIGNAL(signal), slot)
+        if checkable:
+            action.setCheckable(True)
+        return action
+    
+    def addActions(self, target, actions):
+        #print actions
+        for action in actions:
+            if action is None:
+                target.addSeparator()
+            else:
+                target.addAction(action)
+                
+    def updateFileMenu(self):
+        self.fileMenu.clear()
+        self.addActions(self.fileMenu, self.fileMenuActions)
+        
+        #self.addActions(self.fileMenu, self.fileMenuActions[:-1])
+        #current = QtCore.QString(self.filename) \
+                #if self.filename is not None else None
+        #recentFiles = []
+        #for fname in self.recentFiles:
+            #if fname != current and QtCore.QFile.exists(fname):
+                #recentFiles.append(fname)
+        #if recentFiles:
+            #self.fileMenu.addSeparator()
+            #for i, fname in enumerate(recentFiles):
+                #action = QtGui.QAction(QtGui.QIcon(":/icons/images/icon.png"), "&%d %s" % (
+                        #i + 1, QtCore.QFileInfo(fname).fileName()), self)
+                #action.setData(QtCore.QVariant(fname))
+                #self.connect(action, QtCore.SIGNAL("triggered()"),
+                             #self.loadFile)
+                #self.fileMenu.addAction(action)
+        #self.fileMenu.addSeparator()
+        #self.fileMenu.addAction(self.fileMenuActions[-1])  
+        
+    def fileNew(self):
+        pass
+    
+    def loadfile(self, fname=None):
+        pass
+    
+    def fileOpen(self):
+        pass
+    
+    def addRecentFile(self, fname):
+        pass
+    
+    def fileSave(self):
+        pass
+    
+    def fileSaveAs(self):
+        pass
+    
+    def filePrint(self):
+        pass
+        
+        
+    def addDockwidget2(self):
+        
+        logDockWidget123 = QtGui.QDockWidget("Log", self)
+        logDockWidget123.setObjectName("LogDockWidget")
+        logDockWidget123.setAllowedAreas(QtCore.Qt.LeftDockWidgetArea | QtCore.Qt.RightDockWidgetArea)
+        
+        self.listWidget123 = QtGui.QListWidget()
+
+        logDockWidget123.setWidget(self.listWidget123) #different kinds of widget can go in here
+        self.addDockWidget(QtCore.Qt.RightDockWidgetArea, logDockWidget123) # set it at right side        
+        
     def closeEvent(self, event):
         if self.okToContinue():
             settings = QtCore.QSettings()

@@ -16,6 +16,6 @@ class SvgWidget(QtSvg.QSvgWidget):
     def __init__(self, parent=None):
         super(SvgWidget, self).__init__(parent)
         
-        self.load(_fromUtf8(':images/images/schematic_from_model_view.svg'))
+        self.load(_fromUtf8(':/images/images/schematic_from_model_view.svg'))
 
 

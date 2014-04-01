@@ -40,8 +40,8 @@ from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 
-from PyQt4 import uic
-form_class, base_class = uic.loadUiType('sequential_clearance_mainwindow.ui')
+#from PyQt4 import uic
+#form_class, base_class = uic.loadUiType('sequential_clearance_mainwindow.ui')
 #class DesignerMainWindow(QtGui.QMainWindow, form_class):
 
 class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
@@ -497,7 +497,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_9.canvas.ax.set_ylabel('Time')
         self.mpl_9.canvas.ax.set_xlabel('m')
         self.mpl_9.canvas.ax.legend(loc='best')   
-        self.mpl_9.canvas.draw()        
+        self.mpl_9.canvas.draw()       
       
         
 def fakeIt():

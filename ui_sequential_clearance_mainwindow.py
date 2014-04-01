@@ -2,13 +2,8 @@
 
 # Form implementation generated from reading ui file 'C:\Users\chris.ohalloran\Documents\GitHub\Sequential_Clearance\sequential_clearance_mainwindow.ui'
 #
-<<<<<<< Updated upstream
-# Created: Tue Apr  1 21:50:02 2014
-#      by: PyQt4 UI code generator 4.9.1
-=======
-# Created: Tue Apr 01 09:26:50 2014
+# Created: Wed Apr 02 09:13:37 2014
 #      by: PyQt4 UI code generator 4.9.6
->>>>>>> Stashed changes
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -702,37 +697,6 @@ class Ui_MplMainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-<<<<<<< Updated upstream
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr1_checkBox.setText(QtGui.QApplication.translate("MplMainWindow", "Highset Y/N", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplinc_cbtime_SpinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "opening time", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpldoubleSpinBox3.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Feeder Multiplier", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_9.setText(QtGui.QApplication.translate("MplMainWindow", "High Set Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplfdr1_highset_spinBox.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Highset Pickup", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_8.setText(QtGui.QApplication.translate("MplMainWindow", "Feeder 2", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplpushButton.setText(QtGui.QApplication.translate("MplMainWindow", "Re-calculate", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setToolTip(QtGui.QApplication.translate("MplMainWindow", "<html><head/><body><p>Matplotlib</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_14.setText(QtGui.QApplication.translate("MplMainWindow", "Line Angle", None, QtGui.QApplication.UnicodeUTF8))
-        self.doubleSpinBox.setSuffix(QtGui.QApplication.translate("MplMainWindow", "deg", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QtGui.QApplication.translate("MplMainWindow", "Margin Plot", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1), QtGui.QApplication.translate("MplMainWindow", "Margin Plot Detail", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QtGui.QApplication.translate("MplMainWindow", "Incomer", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QtGui.QApplication.translate("MplMainWindow", "Feeder1/2", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QtGui.QApplication.translate("MplMainWindow", "Sequence", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_7), QtGui.QApplication.translate("MplMainWindow", "Polar Plots", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_12.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_3.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.mpl_4.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_10), QtGui.QApplication.translate("MplMainWindow", "ITOC Curves", None, QtGui.QApplication.UnicodeUTF8))
-        self.webViewlineEdit.setText(QtGui.QApplication.translate("MplMainWindow", "http://wiki.tesla.local/index.php/Sequential_Clearance", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QtGui.QApplication.translate("MplMainWindow", "Tesla Wiki", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QtGui.QApplication.translate("MplMainWindow", "Graphics", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), QtGui.QApplication.translate("MplMainWindow", "Page", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplactionQuit.setText(QtGui.QApplication.translate("MplMainWindow", "Quit", None, QtGui.QApplication.UnicodeUTF8))
-        self.mplactionOpen.setText(QtGui.QApplication.translate("MplMainWindow", "Open", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSave.setText(QtGui.QApplication.translate("MplMainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSaveAs.setText(QtGui.QApplication.translate("MplMainWindow", "SaveAs", None, QtGui.QApplication.UnicodeUTF8))
-=======
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Pickup</span></p></body></html>", None))
         self.mplfdr1_checkBox.setText(_translate("MplMainWindow", "Highset Y/N", None))
         self.mplinc_cbtime_SpinBox.setToolTip(_translate("MplMainWindow", "opening time", None))
@@ -758,12 +722,10 @@ class Ui_MplMainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MplMainWindow", "Tesla Wiki", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), _translate("MplMainWindow", "Graphics", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), _translate("MplMainWindow", "Page", None))
-        self.menuFile.setTitle(_translate("MplMainWindow", "File", None))
         self.mplactionQuit.setText(_translate("MplMainWindow", "Quit", None))
         self.mplactionOpen.setText(_translate("MplMainWindow", "Open", None))
         self.actionSave.setText(_translate("MplMainWindow", "Save", None))
         self.actionSaveAs.setText(_translate("MplMainWindow", "SaveAs", None))
->>>>>>> Stashed changes
 
 from PyQt4 import QtWebKit
 from rotating_arrow import Example
@@ -772,17 +734,3 @@ from widgets.mpltwinaxiswidget import MplTwinAxisWidget
 from widgets.mplwidget import MplWidget
 from widgets.mplpolarwidget import MplPolarWidget
 import sequential_clearance_resources_rc
-<<<<<<< Updated upstream
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    MplMainWindow = QtGui.QMainWindow()
-    ui = Ui_MplMainWindow()
-    ui.setupUi(MplMainWindow)
-    MplMainWindow.show()
-    sys.exit(app.exec_())
-
-=======
-import sequential_clearance_resources2_rc
->>>>>>> Stashed changes

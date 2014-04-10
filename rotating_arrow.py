@@ -3,6 +3,8 @@
 import math
 import sys
 
+import sequential_clearance_resources_rc
+
 from PyQt4 import QtGui, QtCore
 
 class Arrow(QtGui.QGraphicsPixmapItem):

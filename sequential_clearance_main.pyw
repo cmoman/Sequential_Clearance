@@ -154,7 +154,12 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         pass
     
     def fileOpen(self):
-        pass
+        file = QtGui.QFileDialog.getOpenFileName()
+        # if a file is selected
+        if file:
+            # update the lineEdit widget text with the selected filename
+            self.mpllineEdit.setText(file)        
+        #pass
     
     def addRecentFile(self, fname):
         pass
@@ -225,6 +230,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
         QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
         QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
+        QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
 
         self.update_graph() 
         
@@ -232,8 +238,12 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
     def updateBrowser(self): 
         url=str(self.webViewlineEdit.text())
-        print url
         self.webView.load(QtCore.QUrl(url))
+        
+    def updateUrl(self):
+        url=self.webView.url().toString()
+        self.webViewlineEdit.setText(url)
+
         
     def changeValue(self, value):
         
@@ -266,6 +276,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
 
         self.scene.addEllipse(0.0,0.0,20,20,QtGui.QPen(QtGui.QColor('blue')))
         self.scene.addEllipse(0.0,0.0,200,200,QtGui.QPen(QtGui.QColor('red')))
+        self.scene.addSimpleText("one, two ,three")
+        
 
 
       

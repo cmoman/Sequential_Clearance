@@ -9,7 +9,7 @@ from PyQt4.QtDeclarative import QDeclarativeView
 # requested.
 class Now(QObject):
 
-    now = pyqtSignal(str)
+    now = QtCore.pyqtSignal(str)
 
     def emit_now(self):
         formatted_date = QDateTime.currentDateTime().toString()

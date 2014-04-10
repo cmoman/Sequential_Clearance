@@ -225,6 +225,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
         QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
         QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
+        QtCore.QObject.connect(self.webView, QtCore.SIGNAL('linkClicked()'), self.updateBrowserURL)
+    
 
         self.update_graph() 
         
@@ -232,8 +234,15 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
     def updateBrowser(self): 
         url=str(self.webViewlineEdit.text())
-        print url
         self.webView.load(QtCore.QUrl(url))
+        
+    def updateBrowserURL(self,urk):
+        url=self.webView.url()
+        print url
+        print urk
+        print "1"
+        
+        #self.webViewlineEdit.setText(url)
         
     def changeValue(self, value):
         

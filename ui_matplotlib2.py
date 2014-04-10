@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'C:\Users\chris.ohalloran\Documents\GitHub\Sequential_Clearance\matplotlib2.ui'
 #
-# Created: Wed Apr 02 09:13:37 2014
+# Created: Thu Apr 03 13:45:34 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!

@@ -27,6 +27,8 @@ from PyQt4 import QtCore
 # Python Qt4 bindings for GUI objects
 from PyQt4 import QtGui
 
+#from PyQt4 import QtCore.pyqtSignature
+
 import os
 
 if os.name == 'nt': # Windows
@@ -40,8 +42,8 @@ from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
 from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 
-#from PyQt4 import uic
-#form_class, base_class = uic.loadUiType('sequential_clearance_mainwindow.ui')
+from PyQt4 import uic
+form_class, base_class = uic.loadUiType('sequential_clearance_mainwindow.ui')
 #class DesignerMainWindow(QtGui.QMainWindow, form_class):
 
 class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
@@ -83,6 +85,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         status123.setSizeGripEnabled(False)
         status123.addPermanentWidget(self.sizeLabel)
         status123.showMessage("Ready", 5000)
+        #todo
      
     def toolbar2(self) :
 
@@ -171,6 +174,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         pass
     
     def filePrint(self):
+        print("file print")
         pass
         
         
@@ -217,33 +221,58 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.lineangle=35
         
         self.doubleSpinBox.setValue(self.lineangle) 
-
+        
+        self.mplpushButton.clicked.connect(self.update_graph)
+        self.mplactionOpen.triggered.connect(self.select_file)
+        #self.mplactionQuit.triggered.connect(
+        self.horizontalSlider.valueChanged.connect(self.changeValue)
+        self.dial.valueChanged.connect(self.changeValue2)
+        self.mpldoubleSpinBox.valueChanged.connect(self.changeValue3)
+        self.doubleSpinBox.valueChanged.connect(self.changeValue2)
         
         # connect the signals with the slots
-        QtCore.QObject.connect(self.mplpushButton, QtCore.SIGNAL("clicked()"), self.update_graph)
-        QtCore.QObject.connect(self.mplactionOpen, QtCore.SIGNAL('triggered()'), self.select_file)
+        #QtCore.QObject.connect(self.mplpushButton, QtCore.SIGNAL("clicked()"), self.update_graph)
+        #QtCore.QObject.connect(self.mplactionOpen, QtCore.SIGNAL('triggered()'), self.select_file)
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
         
-        QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
-        QtCore.QObject.connect(self.dial, QtCore.SIGNAL('valueChanged(int)'), self.changeValue2)
+        #QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
+        #QtCore.QObject.connect(self.dial, QtCore.SIGNAL('valueChanged(int)'), self.changeValue2)
         
+
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
         QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
         QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
         QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
     
 
+        #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
+        #QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
+        #QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
+        #QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
+
+
         self.update_graph() 
         
         self.bling()
-        
-    def updateBrowser(self): 
+      
+
+    @QtCore.pyqtSignature("")   
+    def on_webViewlineEdit_returnPressed(self): 
         url=str(self.webViewlineEdit.text())
         self.webView.load(QtCore.QUrl(url))
         
-    def updateUrl(self):
+    @QtCore.pyqtSignature("QUrl")
+    def on_webView_urlChanged(self):
         url=self.webView.url().toString()
-        self.webViewlineEdit.setText(url)
+        self.webViewlineEdit.setText(url)    
+    
+    #def updateBrowser(self): 
+        #url=str(self.webViewlineEdit.text())
+        #self.webView.load(QtCore.QUrl(url))
+        
+    #def updateUrl(self):
+        #url=self.webView.url().toString()
+        #self.webViewlineEdit.setText(url)
 
         
     def changeValue(self, value):

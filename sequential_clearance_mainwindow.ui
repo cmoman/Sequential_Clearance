@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>11</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -1126,6 +1126,31 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_11">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
+       <widget class="QCalendarWidget" name="calendarWidget">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>60</y>
+          <width>360</width>
+          <height>150</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>240</y>
+          <width>110</width>
+          <height>23</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -1223,12 +1248,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>122</y>
+     <x>511</x>
+     <y>108</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1239,12 +1264,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>97</y>
+     <x>511</x>
+     <y>80</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1255,12 +1280,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>147</y>
+     <x>343</x>
+     <y>135</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1271,12 +1296,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>97</y>
+     <x>343</x>
+     <y>80</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1287,12 +1312,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>147</y>
+     <x>511</x>
+     <y>135</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1303,12 +1328,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>72</y>
+     <x>343</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1319,12 +1344,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>72</y>
+     <x>511</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1335,12 +1360,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>806</x>
-     <y>74</y>
+     <x>864</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1351,12 +1376,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>74</y>
+     <x>679</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1367,12 +1392,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>156</y>
+     <x>679</x>
+     <y>135</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1383,12 +1408,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>101</y>
+     <x>679</x>
+     <y>80</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1399,12 +1424,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>242</y>
+     <x>679</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1415,12 +1440,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>222</y>
+     <x>511</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1431,12 +1456,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>222</y>
+     <x>343</x>
+     <y>221</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1447,12 +1472,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>183</y>
+     <x>679</x>
+     <y>162</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1463,12 +1488,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>172</y>
+     <x>511</x>
+     <y>162</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1479,12 +1504,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>172</y>
+     <x>343</x>
+     <y>162</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1495,12 +1520,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>211</y>
+     <x>679</x>
+     <y>190</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1511,12 +1536,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>336</x>
-     <y>197</y>
+     <x>511</x>
+     <y>190</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1527,12 +1552,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>197</y>
+     <x>343</x>
+     <y>190</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1543,12 +1568,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>122</y>
+     <x>343</x>
+     <y>108</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1559,12 +1584,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>129</y>
+     <x>679</x>
+     <y>108</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1575,12 +1600,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>806</x>
-     <y>215</y>
+     <x>864</x>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
     </hint>
    </hints>
   </connection>
@@ -1591,12 +1616,28 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>798</x>
-     <y>615</y>
+     <x>856</x>
+     <y>751</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
-     <y>243</y>
+     <x>864</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>calendarWidget</sender>
+   <signal>clicked(QDate)</signal>
+   <receiver>dateEdit</receiver>
+   <slot>setDate(QDate)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>391</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>513</y>
     </hint>
    </hints>
   </connection>

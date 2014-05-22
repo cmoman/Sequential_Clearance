@@ -241,8 +241,8 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
 
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
         QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
-        QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
-        QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
+        #QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
+        #QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
     
 
         #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)

@@ -343,14 +343,14 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_1.canvas.ax.plot(m_store,margin_store4,antialiased=True,alpha=.5,color='b', marker=',',label='Inc margin first trip')
         self.mpl_1.canvas.ax.grid(True) 
         self.mpl_1.canvas.ax.axhline(0.4,color='r')
-        self.mpl_1.canvas.ax.legend(loc='best')
+        self.mpl_1.canvas.ax.legend(loc='upper left')
         
         self.mpl_1.canvas.ax2.clear()
         self.mpl_1.canvas.ax2.set_ylabel('Percentage travel')
         self.mpl_1.canvas.ax2.grid(True) 
-        self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent')
+        self.mpl_1.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='purple', marker=',', label='Inc percent 1st trip')
         self.mpl_1.canvas.ax2.set_ylim(0.0,100)
-        self.mpl_1.canvas.ax2.legend(loc='center right')
+        self.mpl_1.canvas.ax2.legend(loc='upper right')
         
         
         self.mpl_1.canvas.draw()
@@ -365,14 +365,14 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_2.canvas.ax.plot(m_store,margin_store,antialiased=True, alpha=.5,color='g', marker=',',label='Inc margin')
         self.mpl_2.canvas.ax.plot(m_store,margin_store5,antialiased=True,alpha=.5,color='r', marker=',', label='Stage1')
         self.mpl_2.canvas.ax.plot(m_store,margin_store6,antialiased=True,alpha=.5,color='b', marker=',', label='Stage1+2')        
-        self.mpl_2.canvas.ax.legend(loc='best')
+        self.mpl_2.canvas.ax.legend(loc='upper left')
         
         self.mpl_2.canvas.ax2.clear()
         self.mpl_2.canvas.ax2.set_ylabel('Percentage travel')
         self.mpl_2.canvas.ax2.grid(True) 
-        self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='r', marker=',', label='Inc percent 1st trip')
+        self.mpl_2.canvas.ax2.plot(m_store,margin_store2,antialiased=True,alpha=.5,color='purple', marker=',', label='Inc percent 1st trip')
         self.mpl_2.canvas.ax2.set_ylim(0.0,100)
-        self.mpl_2.canvas.ax2.legend(loc='best')            
+        self.mpl_2.canvas.ax2.legend(loc='upper right')            
             
         self.mpl_2.canvas.draw()
         

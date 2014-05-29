@@ -89,11 +89,11 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
      
     def toolbar2(self) :
 
-        fileNewAction = self.createAction("&New...", self.fileNew, QtGui.QKeySequence.New, "filenew", "Create an image file") # the final text goes to the status bar
-        fileOpenAction = self.createAction("&Open...", self.fileOpen, QtGui.QKeySequence.Open, "fileopen", "Open an existing image file") # the KeySequence must connect into some bigger picture that included the short cut and the icon.
-        fileSaveAction = self.createAction("&Save", self.fileSave, QtGui.QKeySequence.Save, "filesave", "Save the image")
-        fileSaveAsAction = self.createAction("Save &As", self.fileSaveAs, icon="filesaveas", tip="Save the image using a new name")
-        filePrintAction = self.createAction("&Print", self.filePrint, QtGui.QKeySequence.Print, "fileprint", "Print the image")
+        fileNewAction = self.createAction("&New...", self.fileNew, QtGui.QKeySequence.New, "filenew", "Create a project file") # the final text goes to the status bar
+        fileOpenAction = self.createAction("&Open...", self.fileOpen, QtGui.QKeySequence.Open, "fileopen", "Open an existing project file") # the KeySequence must connect into some bigger picture that included the short cut and the icon.
+        fileSaveAction = self.createAction("&Save", self.fileSave, QtGui.QKeySequence.Save, "filesave", "Save the project")
+        fileSaveAsAction = self.createAction("Save &As", self.fileSaveAs, icon="filesaveas", tip="Save the project using a new name")
+        filePrintAction = self.createAction("&Print", self.filePrint, QtGui.QKeySequence.Print, "fileprint", "Print the project")
         fileQuitAction = self.createAction("&Quit", self.close, "Cntrl+Q", "filequit", "Close the application")
         self.fileMenu = self.menuBar().addMenu("&File")  #this creates the dropdown on which to now add the title "File"
         self.fileMenuActions = (fileNewAction, fileOpenAction, fileSaveAsAction, None, filePrintAction, fileQuitAction) # this grabs all the actions from above
@@ -204,7 +204,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
             
     def okToContinue(self):
         if self.dirty:
-            reply = QtGui.QMessageBox.question(self, "Image Changer - Unsaved Changes",
+            reply = QtGui.QMessageBox.question(self, "Sequential Clearance - Unsaved Changes",
                                                 "Save unsaved changes?",
                                                 QtGui.QMessageBox.Yes|QtGui.QMessageBox.No|
                                                 QtGui.QMessageBox.Cancel)
@@ -215,7 +215,6 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         return True
         
     def initUI(self):
-        #self.ratio   =self.mpldoubleSpinBox.value()
         
         self.ratio=2.0
         self.lineangle=35
@@ -224,36 +223,18 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
         self.mplpushButton.clicked.connect(self.update_graph)
         self.mplactionOpen.triggered.connect(self.select_file)
-        #self.mplactionQuit.triggered.connect(
+
         self.horizontalSlider.valueChanged.connect(self.changeValue)
         self.dial.valueChanged.connect(self.changeValue2)
         self.mpldoubleSpinBox.valueChanged.connect(self.changeValue3)
         self.doubleSpinBox.valueChanged.connect(self.changeValue2)
         
-        # connect the signals with the slots
-        #QtCore.QObject.connect(self.mplpushButton, QtCore.SIGNAL("clicked()"), self.update_graph)
-        #QtCore.QObject.connect(self.mplactionOpen, QtCore.SIGNAL('triggered()'), self.select_file)
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
-        
-        #QtCore.QObject.connect(self.horizontalSlider, QtCore.SIGNAL('valueChanged(int)'), self.changeValue) 
-        #QtCore.QObject.connect(self.dial, QtCore.SIGNAL('valueChanged(int)'), self.changeValue2)
-        
-
         QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
         QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
-        #QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
-        #QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
-    
-
-        #QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
-        #QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
-        #QtCore.QObject.connect(self.webViewlineEdit, QtCore.SIGNAL('returnPressed()'), self.updateBrowser)
-        #QtCore.QObject.connect(self.webView, QtCore.SIGNAL('urlChanged(QUrl)'), self.updateUrl)
-
 
         self.update_graph() 
         
-        self.bling()
       
 
     @QtCore.pyqtSignature("")   
@@ -293,20 +274,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.ratio=value
         self.mpldoubleSpinBox.setValue(value) 
         
-    def bling(self):
-        self.scene= QtGui.QGraphicsScene()
-        self.scene.setSceneRect(0, 0, 250, 250)
-        self.graphicsView.setScene(self.scene)
-        
-        policy=QtCore.Qt.ScrollBarAlwaysOn
-        self.graphicsView.setVerticalScrollBarPolicy(policy)
-        self.graphicsView.setHorizontalScrollBarPolicy(policy)
-        self.graphicsView.setWindowTitle("Animation")
-        pen=QtGui.QPen(QtGui.QColor('blue'))
-
-        self.scene.addEllipse(0.0,0.0,20,20,QtGui.QPen(QtGui.QColor('blue')))
-        self.scene.addEllipse(0.0,0.0,200,200,QtGui.QPen(QtGui.QColor('red')))
-        self.scene.addSimpleText("one, two ,three")
+ 
         
 
 
@@ -554,11 +522,7 @@ def main():
     app.setApplicationName("Sequential Clearance")
     
     image = QtGui.QImage(400,400,QtGui.QImage.Format_RGB32)
-    #image.setColor(2,2)
-    pixmap3=QtGui.QPixmap(":/images/arrow.png")
-    #pixmap3=QtGui.QPixmap(":/images/title.svg")
-    #pixmap3=QtGui.QPixmap("images/Logo_Export_no_text.png")
-    #pixmap3=QtGui.QPixmap("images/schematic_from_model_view.svg")
+    pixmap3=QtGui.QPixmap(":/images/images/feeder_plot.png")
     pixmap=pixmap3.scaled(400,400,1)
     
     splash = QtGui.QSplashScreen(pixmap, QtCore.Qt.WindowStaysOnTopHint)
@@ -567,20 +531,13 @@ def main():
     splash.show()
 
     splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
-    
-    #app.processEvents()
-    
-    #time.sleep(2)
-    
-    splash.showMessage(QtCore.QString("Sequential Clearance 2"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
+
     app.processEvents()
 
     dmw = DesignerMainWindow() # instantiate a window
     # show it
     dmw.show()
-    
-    
-    
+
     splash.finish(dmw)
     sys.exit(app.exec_())
     

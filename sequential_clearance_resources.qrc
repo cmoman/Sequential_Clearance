@@ -19,7 +19,7 @@
     <file>images/icon.png</file>
   </qresource>
   <qresource prefix="images">
-    <file>arrow.png</file>
+    <file>images/feeder_plot.png</file>
     <file>images/blank.png</file>
     <file>images/Logo_Export_no_text.png</file>
     <file>images/schematic.png</file>

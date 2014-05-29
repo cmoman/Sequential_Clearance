@@ -230,30 +230,20 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.doubleSpinBox.valueChanged.connect(self.changeValue2)
         
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
-        QtCore.QObject.connect(self.mpldoubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue3)
-        QtCore.QObject.connect(self.doubleSpinBox, QtCore.SIGNAL('valueChanged(double)'), self.changeValue2)
 
         self.update_graph() 
         
-      
-
-    @QtCore.pyqtSignature("")   
-    def on_webViewlineEdit_returnPressed(self): 
+        self.webViewlineEdit.returnPressed.connect(self.updateBrowser)
+        self.webView.urlChanged.connect(self.updateUrl)
+        
+          
+    def updateBrowser(self): 
         url=str(self.webViewlineEdit.text())
         self.webView.load(QtCore.QUrl(url))
         
-    @QtCore.pyqtSignature("QUrl")
-    def on_webView_urlChanged(self):
+    def updateUrl(self):
         url=self.webView.url().toString()
-        self.webViewlineEdit.setText(url)    
-    
-    #def updateBrowser(self): 
-        #url=str(self.webViewlineEdit.text())
-        #self.webView.load(QtCore.QUrl(url))
-        
-    #def updateUrl(self):
-        #url=self.webView.url().toString()
-        #self.webViewlineEdit.setText(url)
+        self.webViewlineEdit.setText(url)
 
         
     def changeValue(self, value):

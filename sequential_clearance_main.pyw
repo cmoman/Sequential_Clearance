@@ -228,6 +228,11 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.dial.valueChanged.connect(self.changeValue2)
         self.mpldoubleSpinBox.valueChanged.connect(self.changeValue3)
         self.doubleSpinBox.valueChanged.connect(self.changeValue2)
+        #self.verticalScrollBar.value.connect(self.doubleSpinBox.valueFromText)
+        self.verticalScrollBar.sliderReleased.connect(self.update_graph)
+        #self.verticalScrollBar.valueChanged.connect(self.doubleSpinBox_2)
+        #self.verticalScrollBar.value.connect(self.doubleSpinBox_2)
+        #self.connect(self.verticalScrollBar, QtCore.SIGNAL('valueChange()'), self.doubleSpinBox_2, QtCore.SLOT('setValue()'))
         
         QtCore.QObject.connect(self.mplactionQuit, QtCore.SIGNAL('triggered()'), QtGui.qApp, QtCore.SLOT("quit()"))
 
@@ -286,7 +291,20 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         
     
         
-
+    def add_the_legend(self,graph):
+        graph.canvas.ax.legend(loc=2)
+        graph.canvas.ax2.legend(loc=1)
+        
+    def addMargin(self,graph,x1,x2,y1,y2):
+        m=self.verticalScrollBar.value()
+        a=[x1[m],x2[m]]
+        b=[y1[m],y2[m]]
+        graph.canvas.ax.loglog(a,b)
+        
+        print m
+        print a
+        print b
+        
         
         
     def update_graph(self): 
@@ -391,9 +409,13 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_5.canvas.ax2.plot(m_store,m1,label='Fdr1//Fdr2 I',color='red',linestyle='-.')
         self.mpl_5.canvas.ax2.plot(m_store,m3,label='Fdr2 open I',color='green',linestyle='-.')
         
-        self.mpl_5.canvas.ax.legend(loc=2)
-        self.mpl_5.canvas.ax2.legend(loc=1)
+        #self.mpl_5.canvas.ax.legend(loc=2)
+        #self.mpl_5.canvas.ax2.legend(loc=1)
+        
+        #self.add_the_legend(self.mpl_5)
         self.mpl_5.canvas.draw()
+        
+        
         
         #tab 5
         self.mpl_6.canvas.ax.clear()
@@ -456,6 +478,9 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_12.canvas.ax.set_ylabel('Time')
         self.mpl_12.canvas.ax.set_xlabel('Current')
         self.mpl_12.canvas.ax.legend(loc='best')
+        
+        #self.addMargin(self.mpl_12)
+        
         self.mpl_12.canvas.draw()
         
         self.mpl_3.canvas.ax.clear()
@@ -467,6 +492,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         self.mpl_3.canvas.ax.set_ylabel('Time')
         self.mpl_3.canvas.ax.set_xlabel('Current')
         self.mpl_3.canvas.ax.legend(loc='best')
+        self.addMargin(self.mpl_3,x2,x3,y2,y3)
         self.mpl_3.canvas.draw()
         
         self.mpl_4.canvas.ax.clear()

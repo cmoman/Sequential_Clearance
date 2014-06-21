@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/cmoman/git/Sequential_Clearance/sequential_clearance_mainwindow.ui'
 #
-# Created: Thu May 29 23:11:41 2014
+# Created: Sat Jun 21 23:21:14 2014
 #      by: PyQt4 UI code generator 4.9.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -300,6 +300,26 @@ class Ui_MplMainWindow(object):
         self.frame_12.setObjectName(_fromUtf8("frame_12"))
         self.gridLayout_17 = QtGui.QGridLayout(self.frame_12)
         self.gridLayout_17.setObjectName(_fromUtf8("gridLayout_17"))
+        self.horizontalLayout_6 = QtGui.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(_fromUtf8("horizontalLayout_6"))
+        self.verticalLayout_2 = QtGui.QVBoxLayout()
+        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
+        self.label_12 = QtGui.QLabel(self.frame_12)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_12.sizePolicy().hasHeightForWidth())
+        self.label_12.setSizePolicy(sizePolicy)
+        self.label_12.setObjectName(_fromUtf8("label_12"))
+        self.verticalLayout_2.addWidget(self.label_12)
+        self.doubleSpinBox_2 = QtGui.QDoubleSpinBox(self.frame_12)
+        self.doubleSpinBox_2.setObjectName(_fromUtf8("doubleSpinBox_2"))
+        self.verticalLayout_2.addWidget(self.doubleSpinBox_2)
+        self.verticalScrollBar = QtGui.QScrollBar(self.frame_12)
+        self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
+        self.verticalScrollBar.setObjectName(_fromUtf8("verticalScrollBar"))
+        self.verticalLayout_2.addWidget(self.verticalScrollBar)
+        self.horizontalLayout_6.addLayout(self.verticalLayout_2)
         self.mpl_12 = MplWidget(self.frame_12)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -308,7 +328,8 @@ class Ui_MplMainWindow(object):
         self.mpl_12.setSizePolicy(sizePolicy)
         self.mpl_12.setMinimumSize(QtCore.QSize(0, 0))
         self.mpl_12.setObjectName(_fromUtf8("mpl_12"))
-        self.gridLayout_17.addWidget(self.mpl_12, 0, 0, 1, 1)
+        self.horizontalLayout_6.addWidget(self.mpl_12)
+        self.gridLayout_17.addLayout(self.horizontalLayout_6, 0, 0, 1, 1)
         self.horizontalLayout_2.addWidget(self.frame_12)
         self.frame_11 = QtGui.QFrame(self.tab_10)
         self.frame_11.setFrameShape(QtGui.QFrame.StyledPanel)
@@ -569,7 +590,7 @@ class Ui_MplMainWindow(object):
         self.label_9.setBuddy(self.mplinc_highset_SpinBox)
 
         self.retranslateUi(MplMainWindow)
-        self.tabWidget.setCurrentIndex(7)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QObject.connect(self.curveComboBox_2, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox3, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
         QtCore.QObject.connect(self.mpldoubleSpinBox4, QtCore.SIGNAL(_fromUtf8("valueChanged(double)")), self.mplpushButton.click)
@@ -675,6 +696,7 @@ class Ui_MplMainWindow(object):
         self.label_8.setText(QtGui.QApplication.translate("MplMainWindow", "Feeder 2", None, QtGui.QApplication.UnicodeUTF8))
         self.mplpushButton.setText(QtGui.QApplication.translate("MplMainWindow", "Re-calculate", None, QtGui.QApplication.UnicodeUTF8))
         self.tabWidget.setToolTip(QtGui.QApplication.translate("MplMainWindow", "<html><head/><body><p>Matplotlib</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_12.setText(QtGui.QApplication.translate("MplMainWindow", "m", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_12.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_3.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))
         self.mpl_4.setToolTip(QtGui.QApplication.translate("MplMainWindow", "Matplotlib", None, QtGui.QApplication.UnicodeUTF8))

@@ -22,7 +22,7 @@ from PyQt4 import QtGui
 # import the MainWindow widget from the converted .ui files
 from ui_qtdesigner import Ui_MplMainWindow
 
-from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
+from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
 
 class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
     """Customization for Qt Designer created window"""

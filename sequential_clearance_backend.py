@@ -1,10 +1,10 @@
 #!/usr/bin/python
 from __future__ import division
-import sys
-import time
+#import sys
+#import time
 import math
 import numpy as np
-import scipy as scp
+#import scipy as scp
 import cmath as cm
 
 ########################################################################
@@ -46,7 +46,7 @@ class CB_Relay(object):
         
         self.I=I
         
-        a,b,c,d,e=curvetypes.get(unicode(self.curvetype))
+        a,b,c,d,e=curvetypes.get(str(self.curvetype))
         self.a,self.b,self.c,self.d,self.e=a,b,c,d,e
 
         self.multiple=(self.I/(self.pickup*self.ctratio))            
@@ -123,7 +123,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
     i=0
     m=0.5
 
-    ratio=abs(Z_loop/Z_transformer)
+    #ratio=abs(Z_loop/Z_transformer)
 
 
     '''
@@ -215,7 +215,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
 
     #Sequential clearance calc
 
-    for i in xrange(len(m_store)):
+    for i in range(len(m_store)):
 
         feederone.tripped=0
         feedertwo.tripped=0
@@ -362,7 +362,7 @@ def main_seq(ratio2,mult0,mult1,mult2,pickup0,pickup1,pickup2,incct,feederct1,fe
             
             
         else:
-            print feederone.tripped,feedertwo.tripped,incomer.tripped
+            print (feederone.tripped,feedertwo.tripped,incomer.tripped)
             margin_store.append(20)
             margin_store2.append(100)
             margin_store3.append(20)
@@ -408,7 +408,7 @@ class sequentialClearance(object):
         i=0
         m=0.5
     
-        ratio=abs(Z_loop/Z_transformer)
+        #ratio=abs(Z_loop/Z_transformer)
     
     
         '''
@@ -500,7 +500,7 @@ class sequentialClearance(object):
     
         #Sequential clearance calc
     
-        for i in xrange(len(m_store)):
+        for i in range(len(m_store)):
     
             feederone.tripped=0
             feedertwo.tripped=0
@@ -647,7 +647,7 @@ class sequentialClearance(object):
                 
                 
             else:
-                print feederone.tripped,feedertwo.tripped,incomer.tripped
+                print (feederone.tripped,feedertwo.tripped,incomer.tripped)
                 margin_store.append(20)
                 margin_store2.append(100)
                 margin_store3.append(20)

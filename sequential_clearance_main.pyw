@@ -5,11 +5,11 @@
 from __future__ import with_statement
 
 # Numpy module
-import numpy as np
+#import numpy as np
 
 # for command-line arguments
 import sys
-import time
+#import time
 
 #sys.path.append('./widgets')
 #sys.path.insert(0, './widgets')
@@ -40,10 +40,10 @@ if os.name == 'nt': # Windows
 # import the MainWindow widget from the converted .ui files
 from ui_sequential_clearance_mainwindow import Ui_MplMainWindow
 
-from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
+#from matplotlib.backends.backend_qt4agg import NavigationToolbar2QTAgg as NavigationToolbar
 
-from PyQt4 import uic
-form_class, base_class = uic.loadUiType('sequential_clearance_mainwindow.ui')
+#from PyQt4 import uic
+#form_class, base_class = uic.loadUiType('sequential_clearance_mainwindow.ui')
 #class DesignerMainWindow(QtGui.QMainWindow, form_class):
 
 class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
@@ -67,9 +67,10 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
         #self.QwtWidget.show()
         
         self.dirty=True
-        settings = QtCore.QSettings()
-        self.restoreGeometry(settings.value("Geometry").toByteArray()) # method of QWidget
-        self.restoreState(settings.value("MainWindow/State").toByteArray()) # method of QManWindow        
+        '''need to port this to Python 3'''
+        #settings = QtCore.QSettings()
+        #self.restoreGeometry(settings.value("Geometry").toByteArray()) # method of QWidget
+        #self.restoreState(settings.value("MainWindow/State").toByteArray()) # method of QManWindow        
         
         #self.webView.setUrl(QtCore.QUrl(_fromUtf8("http://wiki.tesla.local/index.php/Main_Page")))
         
@@ -91,7 +92,7 @@ class DesignerMainWindow(QtGui.QMainWindow, Ui_MplMainWindow):
 
         fileNewAction = self.createAction("&New...", self.fileNew, QtGui.QKeySequence.New, "filenew", "Create a project file") # the final text goes to the status bar
         fileOpenAction = self.createAction("&Open...", self.fileOpen, QtGui.QKeySequence.Open, "fileopen", "Open an existing project file") # the KeySequence must connect into some bigger picture that included the short cut and the icon.
-        fileSaveAction = self.createAction("&Save", self.fileSave, QtGui.QKeySequence.Save, "filesave", "Save the project")
+        #fileSaveAction = self.createAction("&Save", self.fileSave, QtGui.QKeySequence.Save, "filesave", "Save the project")
         fileSaveAsAction = self.createAction("Save &As", self.fileSaveAs, icon="filesaveas", tip="Save the project using a new name")
         filePrintAction = self.createAction("&Print", self.filePrint, QtGui.QKeySequence.Print, "fileprint", "Print the project")
         fileQuitAction = self.createAction("&Quit", self.close, "Cntrl+Q", "filequit", "Close the application")
@@ -505,13 +506,13 @@ def fakeIt():
 
 # create the GUI application
 def main():
-    import time
+    #import time
     app=QtGui.QApplication(sys.argv)
     app.setOrganizationName("cmoman.ltd")
     app.setOrganizationDomain("blahdeblah.co.nz")
     app.setApplicationName("Sequential Clearance")
     
-    image = QtGui.QImage(400,400,QtGui.QImage.Format_RGB32)
+    #image = QtGui.QImage(400,400,QtGui.QImage.Format_RGB32)
     pixmap3=QtGui.QPixmap(":/images/images/feeder_plot.png")
     pixmap=pixmap3.scaled(400,400,1)
     
@@ -520,7 +521,9 @@ def main():
     
     splash.show()
 
-    splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
+    #splash.showMessage(QtCore.QString("Sequential Clearance"),QtCore.Qt.AlignCenter,QtGui.QColor("Black"))
+    
+
 
     app.processEvents()
 

@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="icons">
     <file>images/back.png</file>
+    <file>sequential_clearance_mainwindow.ui</file>
     <file>images/editinvert.png</file>
     <file>images/editmirror.png</file>
     <file>images/editmirrorhoriz.png</file>
